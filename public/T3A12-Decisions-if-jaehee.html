@@ -1,0 +1,159 @@
+<body style="background-color:#b3b3ff;">
+<h1 align=center><span style="color:gold;">T3A12-Decisions-if-Jaehee.html</span></h1>
+<b style="color:#333300;">
+<pre>
+| | means OR
+& means AND
+! means NOT
+</pre>
+
+(1) <u>Show x:</u> 
+<input id="myText01" type=text value=3 ><br><br>
+<input type=button value="Answer" onclick="{
+x = document.getElementById('myText01').value
+
+myTemp = '........'
+if (x >= 2) {myTemp ='Something'}
+document.getElementById('mySpan01').innerHTML = myTemp
+}"><br><br>
+
+<span id="mySpan01">...</span><br><br>
+
+
+(2) <u>Decide x and y:</u> <input id="myText02a" type=text value=3 >
+<input id="myText02b" type=text value=-5 ><br>
+<input type=button value="Answer" onclick="{
+
+myX = document.getElementById( 'myText02a' ).value
+myY = document.getElementById( 'myText02b' ).value
+
+myTemp ='.........'
+if (myX > 2 && myY < -4){
+myTemp = 'x greater than 2 and y less than -4'
+} else {
+myTemp ='not'
+}
+document.getElementById('mySpan02').innerHTML = myTemp
+
+}"><br>
+<span id="mySpan02">...</span><br><br>
+
+
+(3) <u> [x < 3] and [x > 21]:</u> 
+<input id="mytext01" type="text" value=9>
+<input type=button value="Answer" onclick="{
+
+x = document.getElementById('mytext01').value
+
+myTemp ='.........'
+if (isNaN(x) || x < 3 || x > 21) {
+    text = 'Not valid';
+  } else {
+    text = 'Valid';
+  }
+  document.getElementById('mySpan03').innerHTML = text
+
+}"><br>
+<span id="mySpan03">...</span><br><br>
+
+
+(4) 
+<u>[x > y]:</u> 
+x<input id="mytext02" type="text" value=27>
+y<input id="mytext03" type="text" value=10>
+<input type=button value="Answer" onclick="{
+
+x = document.getElementById('mytext02').value
+y = document.getElementById('mytext03').value
+
+myTemp ='.........'
+if (x > y){
+    myTemp = 'X is Greater';
+  } else {
+    myTemp = 'X is Lower';
+  }
+  document.getElementById('mySpan04').innerHTML = myTemp
+
+}"><br>
+<span id="mySpan04">...</span><br><br>
+
+
+(5) <u>[x > 5] and [y < -5]:</u>
+<input id="mytext04" type="text" value=10>
+<input id="mytext05" type="text" value=-10>
+<input type=button value="Answer" onclick="{
+
+x = document.getElementById('mytext04').value
+y = document.getElementById('mytext05').value
+
+myTemp ='.........'
+if (x >= 5 && y <= -5){
+myTemp = x + '> 5 and' + y + '< -5'
+}else{
+myTemp = 'Wrong Answer'
+}
+document.getElementById('mySpan05').innerHTML = myTemp
+
+}"><br>
+<span id="mySpan05">...</span><br><br>
+
+
+(6)<u> [z*x] > or < [y]:</u><p>
+x<input id="myText07" type=text value=5><br>
+z<input id="myText08" type=text value=15><br>
+y<input id="myText09" type=text value=25><br>
+<input type=button value="Answer" onClick="{
+	x = document.getElementById('myText07').value
+	y = document.getElementById('myText09').value
+        z = document.getElementById('myText08').value
+	myTemp = '......'
+	if (z*x > y || y < 0){
+	myTemp = z*x + '>' + y 
+	}else{
+	myTemp = 'Error please fix'
+	}
+	document.getElementById('mySpan06').innerHTML = myTemp
+}"><br>
+<span id="mySpan06">...</span><br><br>
+
+
+(7)<u> [π*x] > [y]:</u><p> 
+x<input id="myText010" type=text value=6><br>
+y<input id="myText011" type=text value=12><br>
+<input type=button value="Answer" onClick="{
+	x = document.getElementById('myText010').value
+	y = document.getElementById('myText011').value
+	myTemp = '......'
+	if (Math.PI*x > y || y < 0){
+	myTemp = Math.PI*x + '>' + y 
+	}else{
+	myTemp = 'Error please fix'
+	}
+	document.getElementById('mySpan07').innerHTML = myTemp
+}"><br>
+<span id="mySpan07">...</span><br><br>
+
+
+
+(8)<u>Did you like this lab:</u>
+<input id="myText12" type=text value='No' ><br>
+<input type=button value="Answer" onclick="{
+   x = document.getElementById('myText12').value
+   myTemp = '...'
+   if (x=='Yes'){myTemp ='Yes, i enjoyed it'}  
+   else {
+      myTemp = 'No, i did not enjoy it'
+   }  
+    document.getElementById('mySpan08').innerHTML = myTemp
+
+}"><br>
+<span id="mySpan08">...</span><br><br>
+
+
+
+</b><br><br>
+
+
+
+
+
