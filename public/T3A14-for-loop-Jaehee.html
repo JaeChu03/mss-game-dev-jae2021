@@ -1,0 +1,19 @@
+<body style="background-color:#FFFFCC;">
+<b style="color:red;">Version 0.0.6<br></b>
+<h1 align=center><b style="color:red;">T3A14-forloop-Jaehee.html</b></h1>
+<b style="color:red;">Store this input variable into x:</b>
+<input id="myText01" type=text value=30 ><br><br>
+
+<input type=button value="Answer" onclick="{
+
+let myTemp='';
+for (let i=0; i<parseInt(document.getElementById('myText01').value); i++){
+myTemp += '<b style=color:red>' + 'Loop Number: ' + i + '<br></b>'
+}
+document.getElementById('mySpan01').innerHTML = myTemp
+   }"><br><br>
+
+<span id="mySpan01" >...</span><br><br>
+
+
+
