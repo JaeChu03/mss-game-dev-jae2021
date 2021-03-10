@@ -1,0 +1,70 @@
+<body style="background-color:#FA8072;">
+<h1 align=center>T3A10-inOut-Jaehee. html</h1>
+
+x<input id="myText1" type=text value=2003 ><br><br>
+y<input id="myText2" type=text value=1933><br><br>
+<span id="mySpan01" >...</Span><br><br>
+
+<u><b>Simple Function</b><br><br><br></u>
+x </strong>  
+<input type=button value="Answer" onclick="{
+    x = document.getElementById('myText1').value
+    document.getElementById('mySpan01').innerHTML = x
+    }"><br><br>
+<p>
+
+y </strong>  
+<input type=button value="Answer" onclick="{
+    y = document.getElementById('myText2').value
+    document.getElementById('mySpan01').innerHTML = y
+    }"><br><br>
+<p>
+
+
+<u><b>Advanced Function</b><br><br><br></u>
+
+x*π/ 180 </strong>  
+<input type=button value="Answer" onclick="{
+    x = document.getElementById('myText1').value
+    document.getElementById('mySpan01').innerHTML = Math.cos(x * Math.PI / 180)
+    }"><br><br>
+<p>
+√x
+<input type=button value="Answer" onclick="{
+    x = document.getElementById('myText1').value
+    document.getElementById('mySpan01').innerHTML = Math.sqrt (x)
+    }"><br><br>
+<p>
+π/x 
+<input type=button value="Answer" onclick="{
+    x = document.getElementById('myText1').value
+    document.getElementById('mySpan01').innerHTML = Math.PI/x 
+    }"><br><br>
+<P>
+x*y
+<input type=button value="Answer" onclick="{
+    x = document.getElementById('myText1').value 
+    y = document.getElementById('myText2').value
+    document.getElementById('mySpan01').innerHTML = x * y
+    }"><br><br>
+<P> 
+x-y
+<input type=button value="Answer" onclick="{
+    x = document.getElementById('myText1').value
+    y = document.getElementById('myText2').value
+    document.getElementById('mySpan01').innerHTML = x-y
+    }"><br><br>
+<P>
+x+y
+<input type=button value="Answer" onclick="{
+    x = document.getElementById('myText1').value
+    y = document.getElementById('myText2').value
+    document.getElementById('mySpan01').innerHTML  = (parseFloat(x) + parseFloat(y))
+    }"><br><br>
+<p>  
+x^y
+<input type=button value="Answer" onclick="{
+    x = document.getElementById('myText1').value
+    y = document.getElementById('myText2').value
+    document.getElementById('mySpan01').innerHTML = Math.pow(x, y)  
+    }"><br><br>
