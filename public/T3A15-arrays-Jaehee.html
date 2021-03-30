@@ -1,0 +1,49 @@
+<body style="background-color:#ece0cf;">
+Version: 1.0.0 <br>
+<h1 align=center>T3A15-array-Jaehee.html</h1>
+
+<input id="myText01" type=text value=3><br><br>
+
+<input type=button value="Make and Show Array" onclick="{
+x = document.getElementById('myText01').value
+    document.myArray = new Array()
+    document.myArray[0] = (parseFloat(x) + parseFloat(1));
+    document.myArray[1] = (parseFloat(x) + parseFloat(2));
+    document.myArray[2] = (parseFloat(x) + parseFloat(3));
+    document.myArray[3] = (parseFloat(x) + parseFloat(4));
+    document.myArray[4] = (parseFloat(x) + parseFloat(5));
+    document.myArray[5] = (parseFloat(x) + parseFloat(6));
+    document.myArray[6] = (parseFloat(x) + parseFloat(7));
+    document.myArray[7] = (parseFloat(x) + parseFloat(8));
+    document.myArray[8] = (parseFloat(x) + parseFloat(9));
+    document.myArray[9] = (parseFloat(x) + parseFloat(10));
+    document.myArray[10] = (parseFloat(x) + parseFloat(11));
+    document.myArray[11] = (parseFloat(x) + parseFloat(12));
+    document.myArray[12] = (parseFloat(x) + parseFloat(13));
+    document.myArray[13] = (parseFloat(x) + parseFloat(14));
+    document.myArray[14] = (parseFloat(x) + parseFloat(15));
+    document.myArray[15] = (parseFloat(x) + parseFloat(16));
+    document.myArray[16] = (parseFloat(x) + parseFloat(17));
+    document.myArray[17] = (parseFloat(x) + parseFloat(18));
+    document.myArray[18] = (parseFloat(x) + parseFloat(19));
+    document.myArray[19] = (parseFloat(x) + parseFloat(20));
+    document.myArray[20] = (parseFloat(x) + parseFloat(21));
+    document.myArray[21] = (parseFloat(x) + parseFloat(22));
+    document.myArray[22] = (parseFloat(x) + parseFloat(23));
+    document.myArray[23] = (parseFloat(x) + parseFloat(24));
+    document.myArray[24] = (parseFloat(x) + parseFloat(25));
+    document.myArray[25] = (parseFloat(x) + parseFloat(26));
+ 
+
+document.getElementById('mySpan01').innerHTML = '['+ x +'] value is: '+document.myArray[1]
+}"><br><br>
+
+<input type=button value="Loop Through Array" onclick="{
+    myTemp = ''
+     for (let i=0; i<parseInt(document.getElementById('myText01').value); i++){
+      myTemp += 'document.myArray[' + i + '] is: '+ document.myArray[i] + '<br>'
+      }
+      document.getElementById('mySpan01').innerHTML = myTemp
+}"><br><br>
+
+<span id="mySpan01">...</Span><br><br>
