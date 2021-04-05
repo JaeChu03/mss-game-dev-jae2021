@@ -1,0 +1,31 @@
+<body style="background-color:#98AFC7;">
+Version 1.0.0
+<h1 align=center>T3A17-bonus-class-name</h1>
+
+<b style="color:#000061;"><div id='myDiv131'>...</div><br></b>
+<p>
+
+Enter an age into the class: <input id="myText01" type=text value=17 ><br><br>
+Enter the pets name from the web page: <input id="myText02" type=text value='Fluffy' ><br><br>
+
+
+<input id="myButton131" type="button" value="Answer" onclick="{
+x = document.getElementById('myText01').value
+y = document.getElementById('myText02').value
+class myAnimal {
+    constructor(passName, passAge) {
+       this.myName = passName;
+       this.myAge = passAge;
+    }
+    myShow(){
+       document.getElementById('myDiv131').innerHTML = 'Hello ' + this.myName +  this.myAge
+    }
+ }  // end class myAnimal
+                                                                                              
+   myPet = new myAnimal(y +' is ', x) 
+   myPet.myShow()                                                                       
+}"><br><br>
+
+
+
+
