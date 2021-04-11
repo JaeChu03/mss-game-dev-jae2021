@@ -1,4 +1,3 @@
-<body>
 Version 1.0.0
 <script> 
         let mySound1 = new Audio ('DPRK.m4a') 
@@ -44,10 +43,7 @@ Version 1.0.0
 <li><font color="#3dff3d">ononline</font>
 <li><font color="#3dff3d">onstalled</font>
 <li><font color="#3dff3d">onvolumechange</font>
-
 </ul></b>
-
-</body>
 
 	
 
