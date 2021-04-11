@@ -1,6 +1,6 @@
 Version 0.0.1
-<script> let mySound1 = new Audio ('Fire.m4a') </script>
-<script> let mySound2 = new Audio ('DPRK.m4a') </script>
+<script> let mySound1 = new Audio ('Jo.m4a') </script>
+<script> let mySound2 = new Audio ('Musik.m4a') </script>
 <script> let mySound3 = new Audio ('Clap.m4a') </script>
 
 <h1 align=center>T3A18-Sounds-and-events-name.html</h1>
@@ -9,10 +9,18 @@ Version 0.0.1
 
 <b onClick="{
    mySound1.play() 
-}"><style="color:blue;"> (2) onClick </b><br>
+}"><style="color:blue;"> (2) onClick </b><br><br>
 
 
-<br>
+<b onMouseover="{
+   mySound1.play() 
+}"><style="color:blue;"> (3) onMouseover </b><br><br>
+
+
+<b onMousewheel="{
+   mySound1.play() 
+}"><style="color:blue;"> (4) onMousewheel </b><br><br>
+
 
 Change the following to hear a gross sound: <input type=text value=5 onChange="{
    mySound2.play() 
@@ -43,5 +51,3 @@ Let go a key in the text box!(onkeyup): <input type=text value=5 onkeyup="{
    mySound6.play() 
 }">
 <br><br>
-
-
