@@ -1,99 +1,54 @@
-<body 
-onLoad="{
-	document.getElementById('mySpan2').innerHTML= 'onLoad activated'
-	}"
-onKeyDown="{
-	let myAlphaKey = event. key
-	if (myAlphaKey == 'a') {
-	document.getElementById('mySpan2').innerHTML= 'onKeyDown activated'
-	}
-}">
-<script> 
-let mySound1 = new Audio('Clap.m4a') 
-let mySound2 = new Audio('Jo.m4a') 
-let mySound3 = new Audio('Musik.m4a') 
-</script>
-<h1 align=center>T3A18-Sounds and Events-Charles.html</h1>
-Version 1.2.4<br><br>
+Version 0.0.1
+<script> let mySound1 = new Audio ('Jo.m4a') </script>
+<script> let mySound2 = new Audio ('Musik.m4a') </script>
+<script> let mySound3 = new Audio ('Clap.m4a') </script>
 
-Output span 1: <span id="mySpan1">. . .</span><br>
-Output span 2: <span id="mySpan2">. . .</span><br>
-Output span 3: <span id="mySpan3">. . .</span><br><br>
+<h1 align=center>T3A18-Sounds-and-events-name.html</h1>
+<body style="background-color:black;color:white;">
+
 
 <b onClick="{
-	mySound2.play()
-}">Click it to hear a sound!</b><br><br>
+   mySound1.play() 
+}"> 
+This is bold<br>and several<br> lines<br> Click it to hear a sound!</b>
 
-Change the following: <input type=text value=5 onChange="{
-	document.getElementById('mySpan1').innerHTML= 'onChange activated'
-}"><br><br>
+<br>
 
-onMouseover: <span onMouseover="{
-	mySound3.play()
-	}">Mouseover here for sound!</span><br><br>
-onSelect: <input type=text value="Select here!" onSelect="{
-	document.getElementById('mySpan1').innerHTML= 'onSelect activated'
-	}"><br><br>
-onBlur: <span onBlur="{
-	document.getElementById('mySpan1').innerHTML= 'onBlur activated'
-	}">You need to wait  for this one. </span><br><br>
-onDblclick: <input type=button Value="onDblclick for sound" onDblclick="{
-	mySound1.play()
-	}"><br><br>
-onKeyDown: press 'a'<br><br>
-onPlay, onVolumechange, onPause, onCanplay, onCanplaythrough, onWaiting: 
-Try to play, stop, make the audio load and change the volume of the audio. <br>
-<audio controls
-onPlay="{
-	document.getElementById('mySpan1').innerHTML= 'onPlay activated'
-	}"
-onVolumechange="{
-	document.getElementById('mySpan1').innerHTML= 'onVolumechange activated'
-	}"
-onPause="{
-	document.getElementById('mySpan2').innerHTML= 'onPause activated'
-	}"
-onCanplay="{
-	document.getElementById('mySpan1').innerHTML= 'onCanplay activated'
-	}"
-onCanplaythrough="{
-	document.getElementById('mySpan3').innerHTML= 'onCanplaythrough activated'
-	}"
-onWaiting="{
-	document.getElementById('mySpan2').innerHTML= 'onWaiting activated'
-	}">
-  <source src="Never Gonna Give You Up Original.mp3" type="audio/mpeg">
-</audio><br><br>
-
-onSubmit: Press 'Submit'
-<form onSubmit="{
-	document.getElementById('mySpan2').innerHTML= 'onSubmit activated'
-	}">
-  <input type="submit">
-</form><br>
-
-onWheel: <span onWheel="{document.getElementById('mySpan1').innerHTML= 'onWheel activated'}">Scroll over here!</span><br><br>
+Change the following to hear a gross sound: <input type=text value=5 onChange="{
+   mySound2.play() 
+}">
+<br><br>
 
 
-<ul>Other events you could use on any web page tag:
-<font color=green>
-<li>onClick
-<li>onWheel
-<li>onDblClick
-<li>onMouseOver
-<li><font color="green">onChange</font>
-<li>onSelect
-<li>onBlur
-<li>onKeyDown
-<li>onPlay
-<li>onVolumechange
-<li>onPause
-<li>onCanplay
-<li>onCanplaythrough
-<li>onWaiting
-<li>onLoad
-<li>onSubmit
-</font>
-<ul>
+Double click the following: <img src="https://fiverr-res.cloudinary.com/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/138833134/original/50f888187bf2802af1829bf48f0d8702b90746c9.jpg" 
+width="100" height="100"
+ onDblClick="{
+   mySound3.play() 
+}">
+<br><br>
 
-</body>
+Hover over the image (onMouseOver): <img src="https://st2.depositphotos.com/1007566/7855/v/600/depositphotos_78559212-stock-illustration-music-online.jpg" 
+width="100" height="100"
+ onMouseOver="{
+   mySound4.play() 
+}">
+<br><br>
+
+Press a key in the text box!(onkeydown): <input type=text value=5 onkeydown="{
+   mySound5.play() 
+}">
+<br><br>
+
+
+Let go a key in the text box!(onkeyup): <input type=text value=5 onkeyup="{
+   mySound6.play() 
+}">
+<br><br>
+
+
+Move your cursor out of the text box!(onMouseout): <input type=text value=5 onMouseout="{
+   mySound7.play() 
+}">
+<br><br>
+
+
