@@ -31,27 +31,32 @@ Version 1.0.0
         }"></b><br><br>
 	
 	
-	
-<b><ul>Other events you could use on any web page tag:
-<font color=green>
-<li>onClick
-<li>onWheel
+
+<ul>Other events you could use on any web page tag:
+<li><font color="green">onClick</font>
+<li>onMouseScroll
 <li>onDblClick
 <li>onMouseOver
 <li><font color="green">onChange</font>
-<li>onSelect
-<li>onBlur
-<li>onKeyDown
-<li>onPlay
-<li>onVolumechange
-<li>onPause
-<li>onCanplay
-<li>onCanplaythrough
-<li>onWaiting
-<li>onLoad
-<li>onSubmit
-</font>
-<ul></b>
+<li>You finish this list google it!
+
+
+
+<b><ul>Other events you could use on any web page tag:
+<li><font color="#3dff3d">onClick</font>
+<li><font color="#3dff3d">onDblClick</font>
+<li><font color="#3dff3d">onPlay</font>
+<li><font color="#3dff3d">onSubmit</font>
+<li><font color="#3dff3d">onLoad</font>
+<li><font color="#3dff3d">ondragover</font>
+<li><font color="#3dff3d">onerror</font>
+<li><font color="#3dff3d">onkeydown</font>
+<li><font color="#3dff3d">oninput</font>
+<li><font color="#3dff3d">ononline</font>
+<li><font color="#3dff3d">onstalled</font>
+<li><font color="#3dff3d">onvolumechange</font>
+
+</ul></b>
 
 </body>
 
