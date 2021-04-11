@@ -1,0 +1,87 @@
+Version 1.0.0
+<script> let mySound1 = new Audio ('Clap.mp3') </script>
+
+
+<body style="background-color:#FFF5EE;">
+<h1 align=center>T3A09-events-Jaehee</h1>/
+Output span: <span id="mySpan01">...</span><br><br>
+
+
+<b style="color:blue;"> (1) </b><br>This is <b> bold </b> this isn't<br>
+This is <b onMouseOver=" { 
+   document.getElementById('mySpan01').innerHTML = 'Hi from onMouseOver'
+}"> bold and onMouseOver </b> this isn't<br><br>
+
+
+<p> 
+<b style="color:blue;"> (2) </b><br>
+Traditional <b>timeStamp</b> event: <input type=button value="ontimeStamp event" onclick="{
+var n = event.timeStamp;
+document.getElementById('mySpan01') . innerHTML = n
+}"> <br><br>
+
+<p> 
+<b style="color:blue;"> (3) </b><br>
+Traditional <b>onclick</b> event: <input type=button value="onclick event" onclick="{
+// alert('Hi from onclick');
+document.getElementById('mySpan01') . innerHTML = 'Hi from onclick'
+}"> <br><br>
+
+ 
+<p>
+<b style="color:blue;"> (4) </b><br>
+This is <b> bold </b> this isn't<br>
+This is <b onMousewheel=" {
+   document.getElementById('mySpan01').innerHTML = 'Hi from onMousewheel'
+}"> bold and onMousewheel </b> this isn't<br><br>
+
+<p>
+<b style="color:blue;"> (6) </b><br>
+Traditional <b>onkeypress</b> event: <input type=text value="onkeypress event" onkeypress="{
+// alert('Hi from onkeypress');
+document.getElementById('mySpan01') . innerHTML = 'Hi from onkeypress'
+}"> <br><br>
+
+
+<p>
+<b style="color:blue;"> (7) </b><br>
+Traditional <b>ondragstart</b> event:
+<style>
+.droptarget {
+  float: left; 
+  width: 100px; 
+  height: 35px;
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+</style>
+</head>
+<body>
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <p ondragstart="dragStart(event)" ondragend="dragEnd(event)" draggable="true" id="dragtarget">Drag me!</p>
+</div>
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<p id="demo"></p>
+<script>
+function dragStart(event) {
+  event.dataTransfer.setData("Text", event.target.id);
+  document.getElementById("demo").innerHTML = "Can you do it?";
+}
+function dragEnd(event) {
+  document.getElementById("demo").innerHTML = "You did it!";
+}
+function allowDrop(event) {
+  event.preventDefault();
+}
+function drop(event) {
+  event.preventDefault();
+  var data = event.dataTransfer.getData("Text");
+  event.target.appendChild(document.getElementById(data));
+}
+</script>
+
+
+
+
+
