@@ -1,87 +1,62 @@
-Version 1.0.0
-<script> let mySound1 = new Audio ('Clap.m4a') </script>
 
+<script> 
+let mySound1 = new Audio('Clap.m4a') 
+let mySound2 = new Audio('Jo.m4a') 
 
-<body style="background-color:#FFF5EE;">
-<h1 align=center>T3A09-events-Jaehee</h1>/
-Output span: <span id="mySpan01">...</span><br><br>
-
-
-<b style="color:blue;"> (1) </b><br>This is <b> bold </b> this isn't<br>
-This is <b onMouseOver=" { 
-   mySound1.play() 
-}"> bold and onMouseOver </b> this isn't<br><br>
-
-
-<p> 
-<b style="color:blue;"> (2) </b><br>
-Traditional <b>timeStamp</b> event: <input type=button value="ontimeStamp event" onclick="{
-var n = event.timeStamp;
-document.getElementById('mySpan01') . innerHTML = n
-}"> <br><br>
-
-<p> 
-<b style="color:blue;"> (3) </b><br>
-Traditional <b>onclick</b> event: <input type=button value="onclick event" onclick="{
-// alert('Hi from onclick');
-document.getElementById('mySpan01') . innerHTML = 'Hi from onclick'
-}"> <br><br>
-
- 
-<p>
-<b style="color:blue;"> (4) </b><br>
-This is <b> bold </b> this isn't<br>
-This is <b onMousewheel=" {
-   document.getElementById('mySpan01').innerHTML = 'Hi from onMousewheel'
-}"> bold and onMousewheel </b> this isn't<br><br>
-
-<p>
-<b style="color:blue;"> (6) </b><br>
-Traditional <b>onkeypress</b> event: <input type=text value="onkeypress event" onkeypress="{
-// alert('Hi from onkeypress');
-document.getElementById('mySpan01') . innerHTML = 'Hi from onkeypress'
-}"> <br><br>
-
-
-<p>
-<b style="color:blue;"> (7) </b><br>
-Traditional <b>ondragstart</b> event:
-<style>
-.droptarget {
-  float: left; 
-  width: 100px; 
-  height: 35px;
-  margin: 15px;
-  padding: 10px;
-  border: 1px solid #aaaaaa;
-}
-</style>
-</head>
-<body>
-<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
-  <p ondragstart="dragStart(event)" ondragend="dragEnd(event)" draggable="true" id="dragtarget">Drag me!</p>
-</div>
-<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-<p id="demo"></p>
-<script>
-function dragStart(event) {
-  event.dataTransfer.setData("Text", event.target.id);
-  document.getElementById("demo").innerHTML = "Can you do it?";
-}
-function dragEnd(event) {
-  document.getElementById("demo").innerHTML = "You did it!";
-}
-function allowDrop(event) {
-  event.preventDefault();
-}
-function drop(event) {
-  event.preventDefault();
-  var data = event.dataTransfer.getData("Text");
-  event.target.appendChild(document.getElementById(data));
-}
 </script>
+<h1 align=center>T3A18-Sounds and Events-Charles.html</h1>
+Version 1.2.4<br><br>
+
+Output span 1: <span id="mySpan1">. . .</span><br>
+Output span 2: <span id="mySpan2">. . .</span><br>
+Output span 3: <span id="mySpan3">. . .</span><br><br>
+
+<b onClick="{
+	mySound2.play()
+}">Click it to hear a sound!</b><br><br>
+
+Change the following: <input type=text value=5 onChange="{
+	document.getElementById('mySpan1').innerHTML= 'onChange activated'
+}"><br><br>
+
+onMouseover: <span onMouseover="{
+	mySound3.play()
+	}">Mouseover here for sound!</span><br><br>
+onSelect: <input type=text value="Select here!" onSelect="{
+	document.getElementById('mySpan1').innerHTML= 'onSelect activated'
+	}"><br><br>
+onBlur: <span onBlur="{
+	document.getElementById('mySpan1').innerHTML= 'onBlur activated'
+	}">You need to wait  for this one. </span><br><br>
+onDblclick: <input type=button Value="onDblclick for sound" onDblclick="{
+	mySound1.play()
+	}"><br><br>
+
+</form><br>
 
 
+<ul>Other events you could use on any web page tag:
+<font color=green>
+<li>onClick
+<li>onWheel
+<li>onDblClick
+<li>onMouseOver
+<li><font color="green">onChange</font>
+<li>onSelect
+<li>onBlur
+<li>onKeyDown
+<li>onPlay
+<li>onVolumechange
+<li>onPause
+<li>onCanplay
+<li>onCanplaythrough
+<li>onWaiting
+<li>onLoad
+<li>onSubmit
+</font>
+<ul>
+
+</body>
 
 
 
