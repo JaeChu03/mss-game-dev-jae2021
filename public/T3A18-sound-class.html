@@ -12,20 +12,8 @@ Version 0.0.1
 
 <b onClick="{
    mySound1.play() 
-}"><style="color:blue;"> (2) onClick </b><br><br>
+}"><style="color:blue;"> (1) onClick </b><br><br>
 
-   onMouseover: <span onMouseover="{
-	mySound3.play()
-	}">Mouseover here for sound!</span><br><br>
-
-   onSelect: <input type=text value="Select here!" onSelect="{
-	document.getElementById('mySpan1').innerHTML= 'onSelect activated'
-	}"><br><br>
-
-   onBlur: <span onBlur="{
-	document.getElementById('mySpan1').innerHTML= 'onBlur activated'
-	}">You need to wait  for this one. </span><br><br>
-
-   onDblclick: <input type=button Value="onDblclick for sound" onDblclick="{
+<b onDblclick: <input type=button Value="onDblclick for sound" onDblclick="{
 	mySound1.play()
-	}"><br><br>
+	}"><style="color:blue;"> (2)<br><br>
