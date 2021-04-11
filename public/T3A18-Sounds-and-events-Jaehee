@@ -31,17 +31,6 @@ Version 1.0.0
         }"></b><br><br>
 	
 	
-
-<ul>Other events you could use on any web page tag:
-<li><font color="green">onClick</font>
-<li>onMouseScroll
-<li>onDblClick
-<li>onMouseOver
-<li><font color="green">onChange</font>
-<li>You finish this list google it!
-
-
-
 <b><ul>Other events you could use on any web page tag:
 <li><font color="#3dff3d">onClick</font>
 <li><font color="#3dff3d">onDblClick</font>
