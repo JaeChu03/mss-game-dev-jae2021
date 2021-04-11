@@ -14,17 +14,18 @@ Version 0.0.1
    mySound1.play() 
 }"><style="color:blue;"> (2) onClick </b><br><br>
 
-<p>
-<b onMouseover="{
-   mySound2.play() 
-}"><style="color:blue;"> (3) onMouseover </b><br><br>
+   onMouseover: <span onMouseover="{
+	mySound3.play()
+	}">Mouseover here for sound!</span><br><br>
 
-<p>
-<b onMousewheel="{
-   mySound3.play() 
-}"><style="color:blue;"> (4) onMousewheel </b><br><br>
+   onSelect: <input type=text value="Select here!" onSelect="{
+	document.getElementById('mySpan1').innerHTML= 'onSelect activated'
+	}"><br><br>
 
-<p>
-<b onDblclick="{
-   mySound4.play() 
-}"><style="color:blue;"> (4) onDblclick </b><br><br>
+   onBlur: <span onBlur="{
+	document.getElementById('mySpan1').innerHTML= 'onBlur activated'
+	}">You need to wait  for this one. </span><br><br>
+
+   onDblclick: <input type=button Value="onDblclick for sound" onDblclick="{
+	mySound1.play()
+	}"><br><br>
