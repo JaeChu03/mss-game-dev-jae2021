@@ -50,26 +50,6 @@ if (parseInt(document.getElementById('mySpan01').style.top) + 65 > window.innerH
     document.myYmove = document.myYmove * -1   // then bounce
 }
 
-function myCheckAll(){
-  if(myHitOther('mySpan01', 'mySpan06')){
-    document.getElementById('mySpan06').style.left = '-400px'
-    alert('ㅋㅋㅋㅋ You win!')
-    location = 'https://google.ca'
-  }
-  
-  if(myHitOther('mySpan01', 'mySpan02')){
-    document.getElementById('mySpan02').style.left = '-400px'
-  }
-  if(myHitOther('mySpan01', 'mySpan03')){
-    document.getElementById('mySpan03').style.left = '-400px'
-  }
-  if(myHitOther('mySpan01', 'mySpan04')){
-    document.getElementById('mySpan04').style.left = '-400px'
-  }
-  if(myHitOther('mySpan01', 'mySpan05')){
-    document.getElementById('mySpan05').style.left = '-400px'
-  }
-}
 
 function myXAuto(){
   document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + document.myXmove
@@ -116,14 +96,8 @@ function myYAuto1(){
 }">
 
 <span id="mySpan01" style="position:absolute; left:100; top:350; width:45; height:30">
-   <font color="#DF0101">Span 1</font></span><br>
-<span id="mySpan02" style="position:absolute; left:250; top:250; width:45; height:30"> 
-   <font color="#013ADF">Span 2</font></span><br>
-<span id="mySpan03" style="position:absolute; left:500; top:350; width:45; height:30"> 
-   <font color="#013ADF">Span 3</font></span><br>
-<span id="mySpan04" style="position:absolute; left:750; top:450; width:45; height:30">
-   <font color="#013ADF">Span 4</font></span><br>
-<span id="mySpan05" style="position:absolute; left:1000; top:350; width:45; height:30"> 
-   <font color="#013ADF">Span 5</font></span><br>
-<span id="mySpan06" style="position:absolute; left:1250; top:250; width:45; height:30"> 
-   <font color="#9A2EFE">Span 6</font></span><br>
+   Span 1 </span><br>
+<span id="mySpan02" style="position:absolute; left:300; top:150; width:45; height:30"> 
+   Span 2 </span><br>
+<span id="mySpan03" style="position:absolute; left:700; top:150; width:45; height:30"> 
+   Span 3 </span><br>
