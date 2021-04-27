@@ -21,25 +21,25 @@ function myHitOther(my1,my2){
 
 
 function myCheckAll(){
-
-// Bounce of windoow walls
-
-if (parseInt(document.getElementById('mySpan01').style.left) < 10) {  // if we hit the left wall
-    document.myXmove = document.myXmove * -1   // then bounce
+  if(myHitOther('mySpan01', 'mySpan06')){
+    document.getElementById('mySpan06').style.left = '-400px'
+    alert('ㅋㅋㅋㅋ You win!')
+    location = 'https://google.ca'
+  }
+  
+  if(myHitOther('mySpan01', 'mySpan02')){
+    document.getElementById('mySpan02').style.left = '-400px'
+  }
+  if(myHitOther('mySpan01', 'mySpan03')){
+    document.getElementById('mySpan03').style.left = '-400px'
+  }
+  if(myHitOther('mySpan01', 'mySpan04')){
+    document.getElementById('mySpan04').style.left = '-400px'
+  }
+  if(myHitOther('mySpan01', 'mySpan05')){
+    document.getElementById('mySpan05').style.left = '-400px'
+  }
 }
-
-if (parseInt(document.getElementById('mySpan01').style.left) + 65 > window.innerWidth) {  // if we hit the right wall
-    document.myXmove = document.myXmove * -1   // then bounce
-}
-
-if (parseInt(document.getElementById('mySpan01').style.top) < 10) {  
-    document.myXmove = document.myXmove * -1   // then bounce
-}
-
-if (parseInt(document.getElementById('mySpan01').style.top) + 65 > window.innerWidth) {  
-    document.myXmove = document.myXmove * -1   // then bounce
-}
-
 
 </script>
 </head>
