@@ -97,17 +97,26 @@ function myYAuto1(){
 }">
 
 <input type=button value="🡄 Auto" onClick="{
-    clearInterval(document.myXtimer1)                    
+    clearInterval(document.myXtimer)
+    clearInterval(document.myYtimer)  
+    clearInterval(document.myXtimer1)
+    clearInterval(document.myYtimer1)                      
     document.myXtimer1 = setInterval( myXAuto1 , document.myXspeed);
 }">
 
 <input type=button value="🡹 Auto" onClick="{
-    clearInterval(document.myYtimer1)                    
+    clearInterval(document.myXtimer)
+    clearInterval(document.myYtimer)  
+    clearInterval(document.myXtimer1)
+    clearInterval(document.myYtimer1)                      
     document.myYtimer1 = setInterval( myYAuto1 , document.myYspeed);
 }">
 
 <input type=button value="🡻 Auto" onClick="{
-    clearInterval(document.myYtimer)                    
+    clearInterval(document.myXtimer)
+    clearInterval(document.myYtimer)  
+    clearInterval(document.myXtimer1)
+    clearInterval(document.myYtimer1)                      
     document.myYtimer = setInterval( myYAuto , document.myYspeed);
 }">
 
