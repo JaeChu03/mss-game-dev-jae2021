@@ -45,6 +45,24 @@ if (parseInt(document.getElementById('mySpan01').style.top) + 65 > window.innerH
     document.myYmove = document.myYmove * -1   // then bounce
 }
 
+// end of bounce code
+
+  if(myHitOther('mySpan01', 'mySpan02')){
+    document.getElementById('mySpan02').style.left = '-400px'
+    // lets try a bounce
+    document.myXmove = document.myXmove * -1
+  }
+
+  if(myHitOther('mySpan01', 'mySpan03')){
+    document.getElementById('mySpan03').style.left = '-400px'
+    alert('You Win!')
+    location = 'https://google.ca'
+  }
+
+  // your other checks go here
+
+}
+
 
 function myXAuto(){
   document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + document.myXmove
