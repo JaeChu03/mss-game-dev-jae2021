@@ -23,23 +23,24 @@ function myHitOther(my1,my2){
 
 
 function myCheckAll(){
-  if(myHitOther('mySpan01', 'mySpan06')){
-    document.getElementById('mySpan06').style.left = '-400px'
-    alert('ㅋㅋㅋㅋ You win!')
-    location = 'https://google.ca'
-  }
-  
+
+// Bounce of windoow walls
+
+if (parseInt(document.getElementById('mySpan01').style.left) < 10) {  // if we hit the left wall
+    document.myXmove = document.myXmove * -1   // then bounce
+}
+if (parseInt(document.getElementById('mySpan01').style.left) + 65 > window.innerWidth) {  // if we hit the right wall
+    document.myXmove = document.myXmove * -1   // then bounce
+}
   if(myHitOther('mySpan01', 'mySpan02')){
     document.getElementById('mySpan02').style.left = '-400px'
+    // lets try a bounce
+    document.myXmove = document.myXmove * -1
   }
   if(myHitOther('mySpan01', 'mySpan03')){
     document.getElementById('mySpan03').style.left = '-400px'
-  }
-  if(myHitOther('mySpan01', 'mySpan04')){
-    document.getElementById('mySpan04').style.left = '-400px'
-  }
-  if(myHitOther('mySpan01', 'mySpan05')){
-    document.getElementById('mySpan05').style.left = '-400px'
+    alert('You Win!')
+    location = 'https://google.ca'
   }
 }
 
