@@ -8,6 +8,8 @@ document.myYspeed = 50
 
 document.myXtimer = 0;
 document.myYtimer = 0;
+document.myXtimer1 = 0;
+document.myYtimer1 = 0;
 
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
@@ -94,7 +96,7 @@ function myYAuto1(){
 }">
 
 <input type=button value="🡄 Auto" onClick="{
-    clearInterval(document.myXtimer)                    
+    clearInterval(document.myXtimer1)                    
     document.myXtimer = setInterval( myXAuto1 , document.myXspeed);
 }">
 
@@ -104,7 +106,7 @@ function myYAuto1(){
 }">
 
 <input type=button value="🡻 Auto" onClick="{
-    clearInterval(document.myYtimer)                    
+    clearInterval(document.myYtimer1)                    
     document.myYtimer = setInterval( myYAuto , document.myYspeed);
 }">
 
