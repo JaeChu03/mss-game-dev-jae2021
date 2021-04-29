@@ -1,4 +1,7 @@
-<body style="background-color:#f5f5dc;">
+<body style="background-color:black;">
+
+<html>
+<head>
 
 <script>
 function myHitOther(my1,my2){
@@ -18,81 +21,119 @@ function myHitOther(my1,my2){
    }
 }
 
-</script>
 
+function myCheckAll(){
 
+  if(myHitOther('mySpan01', 'mySpan02')){
+    document.getElementById('mySpan02').style.left = '-400px'
+    document.getElementById('myTextScore').value = parseInt(document.getElementById('myTextScore').value) + 1
+  }
+  
+  if(myHitOther('mySpan01', 'mySpan03')){
+    document.getElementById('mySpan03').style.left = '-400px'
+    document.getElementById('myTextScore').value = parseInt(document.getElementById('myTextScore').value) + 1
+  }
+  
+  if(myHitOther('mySpan01', 'mySpan05')){
+    document.getElementById('mySpan05').style.left = '-400px'
+    document.getElementById('myTextScore').value = parseInt(document.getElementById('myTextScore').value) + 1
+  }
 
-
-<h1 align=center>T4A01-code-Jaehee.html</h1>
-
-What we are going to do is take CSS positioning and Forms button and make something that moves across the screen.<br>
-
-<img src="https://i.pinimg.com/originals/36/cb/55/36cb55321f0896053499b23328f7e8e9.jpg" alt="map" width="1580" height="655">
+  if(myHitOther('mySpan01', 'mySpan07')){
+    document.getElementById('mySpan07').style.left = '-400px'
+    document.getElementById('myTextScore').value = parseInt(document.getElementById('myTextScore').value) + 1
+  }
+  
+  if(myHitOther('mySpan01', 'mySpan04')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
    
-<span id="Move 10 pixels left" style="position: absolute; left: 800; top: 90;">
+  if(myHitOther('mySpan01', 'mySpan06')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+  
+  if(myHitOther('mySpan01', 'mySpan08')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+   
+  if(myHitOther('mySpan01', 'mySpan10')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
 
-<input type=button value="Move 10 pixels left" onClick="{
-    // alert( parseInt (document.getElementById('mySpan01').style.left) )
-document.getElementById('mySpan01').style.left =
-parseInt (document.getElementById('mySpan01').style.left) - 10
-if(myHitOther('mySpan01','mySpan02')){
- // alert('hit')
- document.getElementById('mySpan02').style.left = '-1000px'
+  // your other checks go here
+
+  if(parseInt(document.getElementById('myTextLife').value)  <=0  ){    // life points at zero
+    alert('LOL, you lost!')
+    location = 'T4A06-score-Jaehee.html'    // refresh page
+  }
+
+  if(myHitOther('mySpan01', 'mySpan09')){
+    document.getElementById('mySpan09').style.left = '-400px'
+    alert('Great job, you won!')
+    location = 'https://google.ca'
+  }
 }
-if(myHitOther('mySpan01','mySpan03')){
- // alert('hit')
- document.getElementById('mySpan03').style.left = '-1000px'
-}
-}"> 
-
-<span id="Move 10 pixels right" style="position: absolute; left:150; top:  0;">
-
-<input type=button value="Move 10 pixels right" onClick="{
-    // alert( parseInt (document.getElementById('mySpan01').style.left) )
-document.getElementById('mySpan01').style.left =
-parseInt (document.getElementById('mySpan01').style.left) + 10
-if(myHitOther('mySpan01','mySpan02')){
- // alert('hit')
- document.getElementById('mySpan02').style.left = '-1000px'
-}
-if(myHitOther('mySpan01','mySpan03')){
- // alert('hit')
- document.getElementById('mySpan03').style.left = '-1000px'
-}
-}"> 
+</script>
+</head>
 
 
-<span id="Move 10 pixels down" style="position: absolute; left: -80; top: 60;">
+<body  onKeyDown="{
+     let myAlphaKey = event.key
+     document.getElementById('myDiv01').innerHTML = 'You typed: ' + myAlphaKey.toLowerCase()
+      if (myAlphaKey.toLowerCase() == 'arrowright') {
+         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 50
+         myCheckAll()
+      }
+      
+      if (myAlphaKey.toLowerCase() == 'd') {   // go right
+         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 50
+         myCheckAll()
+      }
+      
+      if (myAlphaKey.toLowerCase() == 'w') {   // go up
+         document.getElementById('mySpan01').style.top = parseInt(document.getElementById('mySpan01').style.top) - 50
+         myCheckAll()
+      }
+      if (myAlphaKey.toLowerCase() == 'a') {   // go left
+         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - 50
+         myCheckAll()
+      }
+      if (myAlphaKey.toLowerCase() == 's') {   // go down
+         document.getElementById('mySpan01').style.top = parseInt(document.getElementById('mySpan01').style.top) + 50
+         myCheckAll()
+      }
+}">
 
-<input type=button value="Move 10 pixels down" onClick="{
-    // alert( parseInt (document.getElementById('mySpan01').style.top) )
-document.getElementById('mySpan01').style.top =
-parseInt (document.getElementById('mySpan01').style.top) + 10
-if(myHitOther('mySpan01','mySpan02')){
- // alert('hit')
- document.getElementById('mySpan02').style.left = '-1000px'
-} 
-if(myHitOther('mySpan01','mySpan03')){
- // alert('hit')
- document.getElementById('mySpan03').style.left = '-1000px'
-}
-}"> 
+<h1 align=center><span style="color:#daa520">Test game #1 Jaehee</span></h1>
 
-<span id="Move 10 pixels up " style="position: absolute; left:0; top: -100;">
-<input type=button value="Move 10 pixels up" onClick="{
-    // alert( parseInt (document.getElementById('mySpan01').style.top) )
-document.getElementById('mySpan01').style.top =
-parseInt (document.getElementById('mySpan01').style.top) - 10
-if(myHitOther('mySpan01','mySpan02')){
- // alert('hit')
- document.getElementById('mySpan02').style.left = '-1000px'
-}
-if(myHitOther('mySpan01','mySpan03')){
- // alert('hit')
- document.getElementById('mySpan03').style.left = '-1000px'
-}
-}"> 
+<h4 align=left><span style="color:#daa520">If you dock with a satellite you get 1 point score, But if you hit an asteroid  you lose 1 life</span></h4>
+   
+<span style="color:#daa520">Score: <input id="myTextScore" type=text value=0 ><br></span>
 
-<span id="mySpan01" style="position: absolute; left: 300; top: 350; width:45; height:70"><img src="https://qph.fs.quoracdn.net/main-qimg-de71a53450745a24df70d054fe795c7a"></span><br>
-<span id="mySpan02" style="position: absolute; left:-330; top: 150; width:45; height:70"><img src="https://tl.vhv.rs/dpng/s/3-37276_pepe-frog-crying-png-transparent-png.png" width="100" height="100"></span><br>
-<span id="mySpan03" style="position: absolute; left:-500; top: 450; width:45; height:70"><img src="https://tl.vhv.rs/dpng/s/3-37276_pepe-frog-crying-png-transparent-png.png" width="100" height="100"></span><br>
+<span style="color:#daa520">Life: <input id="myTextLife" type=number value=3 ><br><br></span>
+
+<div id="myDiv01">...</div>
+
+
+<span title="1" id="mySpan01" style="position:absolute; left:100; top:350; width:45; height:30">
+<img src="https://th.bing.com/th/id/Rc993de48cb644adfd6b257dffce71fda?rik=bwn83V3J2hWyNA&riu=http%3a%2f%2fpixeljoint.com%2ffiles%2ficons%2ffull%2fspaceship_by_simeontemplard7ur00h.gif&ehk=H1bgwCJ1h%2fx26HKxLnYSC8nfElfWFVxy7K64utEqTsQ%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="2" id="mySpan02" style="position:absolute; left:250; top:250; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="3" id="mySpan03" style="position:absolute; left:400; top:350; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="4" id="mySpan04" style="position:absolute; left:550; top:450; width:45; height:30">
+<img src="https://th.bing.com/th/id/Rbdf616b0559a27f2fff3d5a2320b252c?rik=yjYEO3lJwPnw6g&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fb0d28fcc8a7f281.png&ehk=M4diTFPly3EMmrHLhXFq6BzwAfW3X%2bP2EwUz%2falQnsk%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="5" id="mySpan05" style="position:absolute; left:700; top:350; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="6" id="mySpan06" style="position:absolute; left:850; top:250; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rbdf616b0559a27f2fff3d5a2320b252c?rik=yjYEO3lJwPnw6g&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fb0d28fcc8a7f281.png&ehk=M4diTFPly3EMmrHLhXFq6BzwAfW3X%2bP2EwUz%2falQnsk%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="7" id="mySpan07" style="position:absolute; left:1000; top:350; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="8" id="mySpan08" style="position:absolute; left:1150; top:450; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rbdf616b0559a27f2fff3d5a2320b252c?rik=yjYEO3lJwPnw6g&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fb0d28fcc8a7f281.png&ehk=M4diTFPly3EMmrHLhXFq6BzwAfW3X%2bP2EwUz%2falQnsk%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="9" id="mySpan09" style="position:absolute; left:1300; top:350; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Re296e0f027a866b493f7a299815e811c?rik=yUlHQT64aaN1BQ&riu=http%3a%2f%2forig03.deviantart.net%2fe1f1%2ff%2f2015%2f044%2f0%2ff%2fastronaut_by_balduranne-d7fdpad.png&ehk=gSmx2Rbm8oSBLUXZJLkMF5dENLw62tpl45liR1keVlY%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="10" id="mySpan10" style="position:absolute; left:1200; top:350; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rbdf616b0559a27f2fff3d5a2320b252c?rik=yjYEO3lJwPnw6g&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fb0d28fcc8a7f281.png&ehk=M4diTFPly3EMmrHLhXFq6BzwAfW3X%2bP2EwUz%2falQnsk%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+</body>
+</html>
