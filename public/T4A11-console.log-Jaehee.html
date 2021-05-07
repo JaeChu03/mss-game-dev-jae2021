@@ -85,19 +85,18 @@ parseInt(document.getElementById('mySpan01').style.top) + 50
 
 if(myHitOther('mySpan01', 'mySpan02')){
   document.getElementById('mySpan02').style.top = '-400px'
+ console.log('document.getElementById(\'mySpan02\').style.left') 
+   console.log( document.getElementById('mySpan02').style.left)
 }
 if(myHitOther('mySpan01', 'mySpan03')){
   document.getElementById('mySpan03').style.top = '-400px'
+  console.log('document.getElementById(\'mySpan03\').style.left') 
+  console.log( document.getElementById('mySpan03').style.left)
 }
 if(myHitOther('mySpan01', 'mySpan04')){
   document.getElementById('mySpan04').style.top = '-400px'
-
-   console.log('document.getElementById(\'mySpan02\').style.left') 
-   console.log( document.getElementById('mySpan02').style.left)
-   console.log('document.getElementById(\'mySpan03\').style.left') 
-   console.log( document.getElementById('mySpan03').style.left)
-   console.log('document.getElementById(\'mySpan04\').style.left') 
-   console.log( document.getElementById('mySpan04').style.left) 
+  console.log('document.getElementById(\'mySpan04\').style.left') 
+  console.log( document.getElementById('mySpan04').style.left) 
 }
                         
 }">
@@ -111,21 +110,19 @@ parseInt(document.getElementById('mySpan01').style.top) - 50
 
 if(myHitOther('mySpan01', 'mySpan02')){
   document.getElementById('mySpan02').style.top = '-400px'
+   console.log('document.getElementById(\'mySpan02\').style.left') 
+   console.log( document.getElementById('mySpan02').style.left)
 }
 if(myHitOther('mySpan01', 'mySpan03')){
   document.getElementById('mySpan03').style.top = '-400px'
+   console.log('document.getElementById(\'mySpan03\').style.left') 
+   console.log( document.getElementById('mySpan03').style.left)
 }
 if(myHitOther('mySpan01', 'mySpan04')){
   document.getElementById('mySpan04').style.top = '-400px'
-
-   console.log('document.getElementById(\'mySpan02\').style.left') 
-   console.log( document.getElementById('mySpan02').style.left)
-   console.log('document.getElementById(\'mySpan03\').style.left') 
-   console.log( document.getElementById('mySpan03').style.left)
    console.log('document.getElementById(\'mySpan04\').style.left') 
    console.log( document.getElementById('mySpan04').style.left) 
-}
-                        
+}                       
 }">
 
 <span id="mySpan01" style="position:absolute; left:100; top:150; width:45; height:30"><img src="https://questden.org/kusaba/icons/src/wthamiseeingplz.gif"></span><br>
