@@ -1,3 +1,33 @@
+<body  onKeyDown="{
+     let myAlphaKey = event.key
+     document.getElementById('myDiv01').innerHTML = 'You typed: ' + myAlphaKey.toLowerCase()
+
+      if (myAlphaKey.toLowerCase() == 'arrowright') {
+         document.getElementById('myRight').click()       
+         myCheckAll()
+      }
+
+      if (myAlphaKey.toLowerCase() == 'arrowleft') {
+         document.getElementById('myLeft').click()       
+         myCheckAll()
+      }
+
+      if (myAlphaKey.toLowerCase() == 'arrowup') {
+         document.getElementById('myUp').click()       
+         myCheckAll()
+      }
+
+      if (myAlphaKey.toLowerCase() == 'arrowdown') {
+         document.getElementById('myDown').click()       
+         myCheckAll()
+      }
+    
+  
+}">
+
+
+
+
 <script>
 
 // Global variables works anywhere in your code
@@ -87,40 +117,34 @@ function myYAuto(){
 
 </script>
 
-
-
-
-
 <h1 align=center>T4A15-snake-Jaehee.html</h1>
 
 
-<input type=button value="Right" onClick="{
+<input type=button value="Right" style="display:none" id="myRight" onClick="{
     clearInterval(document.myXtimer)   
     clearInterval(document.myYtimer)  
     document.myXmove = 5          
-
     document.getElementById('t2').style.left = parseInt(document.getElementById('mySpan01').style.left) - 20
     document.getElementById('t3').style.left = parseInt(document.getElementById('mySpan01').style.left) - 40
     document.getElementById('t4').style.left = parseInt(document.getElementById('mySpan01').style.left) - 60                
     document.myXtimer = setInterval( myXAuto , document.myXspeed);
-                        
+                
+
 }">
 
-<input type=button value="Left" onClick="{
+<input type=button value="Left" style="display:none" id="myLeft" onClick="{
     clearInterval(document.myXtimer)   
     clearInterval(document.myYtimer)  
     document.myXmove = -5            
-
     document.getElementById('t2').style.left = parseInt(document.getElementById('mySpan01').style.left) + 50
     document.getElementById('t3').style.left = parseInt(document.getElementById('mySpan01').style.left) + 70
     document.getElementById('t4').style.left = parseInt(document.getElementById('mySpan01').style.left) + 90
-
                
     document.myXtimer = setInterval( myXAuto , document.myXspeed);
                         
 }">
 
-<input type=button value="Down" onClick="{
+<input type=button value="Down" style="display:none" id="myDown" onClick="{
     clearInterval(document.myXtimer)   
     clearInterval(document.myYtimer)   
     document.myYmove = 4                 
@@ -130,7 +154,7 @@ function myYAuto(){
 
 
 
-<input type=button value="Up" onClick="{
+<input type=button value="Up" style="display:none" id="myUp" onClick="{
     clearInterval(document.myXtimer)   
     clearInterval(document.myYtimer)   
     document.myYmove = -4                 
@@ -138,10 +162,7 @@ function myYAuto(){
                         
 }">
 
-
-
-
-
+<div id="myDiv01">...</div>
 
 <span title="1" id="mySpan01" style="position:absolute; left:100; top:150; width:45; height:30">
    Span 1 </span><br>
@@ -154,5 +175,4 @@ function myYAuto(){
 <span title="t2" id="t2" style="position:absolute; left:80; top:150; width:1-; height:10">t2</span><br>
 <span title="t3" id="t3" style="position:absolute; left:60; top:150; width:1-; height:10">t3</span><br>
 <span title="t4" id="t4" style="position:absolute; left:40; top:150; width:1-; height:10">t4</span><br>
-
 
