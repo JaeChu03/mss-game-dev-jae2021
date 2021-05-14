@@ -1,3 +1,4 @@
+
 <body  onKeyDown="{
      let myAlphaKey = event.key
      document.getElementById('myDiv01').innerHTML = 'You typed: ' + myAlphaKey.toLowerCase()
@@ -21,12 +22,8 @@
          document.getElementById('myDown').click()       
          myCheckAll()
       }
-    
-  
+      
 }">
-
-
-
 
 <script>
 
@@ -59,7 +56,6 @@ function myHitOther(my1,my2){
    }
 }
 
-
 function myCheckAll(){
 
 // Bounce of windoow walls
@@ -72,15 +68,12 @@ if (parseInt(document.getElementById('mySpan01').style.left) + 65 > window.inner
     document.myXmove = document.myXmove * -1   // then bounce
 }
 
-
 // end of bounce code
 
   if(myHitOther('mySpan01', 'mySpan02')){
     document.getElementById('mySpan02').style.left = '-400px'
 
   }
-
-
 
   if(myHitOther('mySpan01', 'mySpan03')){
     document.getElementById('mySpan03').style.left = '-400px'
@@ -92,7 +85,6 @@ if (parseInt(document.getElementById('mySpan01').style.left) + 65 > window.inner
 
 }
 
-
 function myXAuto(){
   document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + document.myXmove
 
@@ -103,22 +95,19 @@ function myXAuto(){
   myCheckAll()
 }
 
-
 function myYAuto(){
   document.getElementById('mySpan01').style.top = parseInt(document.getElementById('mySpan01').style.top) + document.myYmove
 
   document.getElementById('t2').style.top = parseInt(document.getElementById('t2').style.top) + document.myYmove
   document.getElementById('t3').style.top = parseInt(document.getElementById('t3').style.top) + document.myYmove
   document.getElementById('t4').style.top = parseInt(document.getElementById('t4').style.top) + document.myYmove
+  
   myCheckAll()
 }
-
-
 
 </script>
 
 <h1 align=center>T4A15-snake-Jaehee.html</h1>
-
 
 <input type=button value="Right" style="display:none" id="myRight" onClick="{
     clearInterval(document.myXtimer)   
@@ -129,7 +118,6 @@ function myYAuto(){
     document.getElementById('t4').style.left = parseInt(document.getElementById('mySpan01').style.left) - 60                
     document.myXtimer = setInterval( myXAuto , document.myXspeed);
                 
-
 }">
 
 <input type=button value="Left" style="display:none" id="myLeft" onClick="{
@@ -138,26 +126,30 @@ function myYAuto(){
     document.myXmove = -5            
     document.getElementById('t2').style.left = parseInt(document.getElementById('mySpan01').style.left) + 50
     document.getElementById('t3').style.left = parseInt(document.getElementById('mySpan01').style.left) + 70
-    document.getElementById('t4').style.left = parseInt(document.getElementById('mySpan01').style.left) + 90
+    document.getElementById('t4').style.left = parseInt(document.getElementById('mySpan01').style.left) + 90  
                
-    document.myXtimer = setInterval( myXAuto , document.myXspeed);
-                        
+    document.myXtimer = setInterval( myXAuto , document.myXspeed);                        
 }">
 
-<input type=button value="Down" style="display:none" id="myDown" onClick="{
+<input type=button value="Up" style="display:none" id="myUp" onClick="{
     clearInterval(document.myXtimer)   
     clearInterval(document.myYtimer)   
-    document.myYmove = 4                 
+    document.myYmove = -5  
+    document.getElementById('t2').style.top = parseInt(document.getElementById('mySpan01').style.top) + 50
+    document.getElementById('t3').style.top = parseInt(document.getElementById('mySpan01').style.top) + 70
+    document.getElementById('t4').style.top = parseInt(document.getElementById('mySpan01').style.top) + 90         
     document.myYtimer = setInterval( myYAuto , document.myYspeed);
                         
 }">
 
 
-
-<input type=button value="Up" style="display:none" id="myUp" onClick="{
+<input type=button value="Down" style="display:none" id="myDown" onClick="{
     clearInterval(document.myXtimer)   
-    clearInterval(document.myYtimer)   
-    document.myYmove = -4                 
+    clearInterval(document.myYtimer) 
+    document.getElementById('t2').style.top = parseInt(document.getElementById('mySpan01').style.top) - 50
+    document.getElementById('t3').style.top = parseInt(document.getElementById('mySpan01').style.top) - 70
+    document.getElementById('t4').style.top = parseInt(document.getElementById('mySpan01').style.top) - 90  
+    document.myYmove = 5                 
     document.myYtimer = setInterval( myYAuto , document.myYspeed);
                         
 }">
@@ -175,4 +167,3 @@ function myYAuto(){
 <span title="t2" id="t2" style="position:absolute; left:80; top:150; width:1-; height:10">t2</span><br>
 <span title="t3" id="t3" style="position:absolute; left:60; top:150; width:1-; height:10">t3</span><br>
 <span title="t4" id="t4" style="position:absolute; left:40; top:150; width:1-; height:10">t4</span><br>
-
