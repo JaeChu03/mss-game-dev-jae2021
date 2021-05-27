@@ -101,7 +101,9 @@ function myBulletFire(){
 
 }">
 
-let myAlphaKey = event.key
+<body  onKeyDown="{
+     let myAlphaKey = event.key
+     document.getElementById('myDiv01').innerHTML = 'You typed: ' + myAlphaKey.toLowerCase()
   
 if (myAlphaKey.toLowerCase() == 'd') {   // go right
   document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + document.myXmove
