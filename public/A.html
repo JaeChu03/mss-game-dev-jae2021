@@ -99,8 +99,9 @@ function myBulletFire(){
     clearInterval(document.myBulletTimer)                    
     document.myBulletTimer = setInterval( myBulletFire , document.myBulletDelay);
 
-                        
 }">
+
+let myAlphaKey = event.key
   
 if (myAlphaKey.toLowerCase() == 'd') {   // go right
   document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + document.myXmove
