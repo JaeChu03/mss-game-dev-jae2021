@@ -105,28 +105,28 @@ function myBulletFire(){
      let myAlphaKey = event.key
      document.getElementById('myDiv01').innerHTML = 'You typed: ' + myAlphaKey.toLowerCase()
   
-if (myAlphaKey.toLowerCase() == 'd') {   // go right
+<input type=button value="right" onClick="{
   document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + document.myXmove
 
   myCheckAll()
                         
 }
 
-  if (myAlphaKey.toLowerCase() == 'a') {   // go left
+ <input type=button value="left" onClick="{
   document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - document.myXmove
 
   myCheckAll()
                         
 }
 
-  if (myAlphaKey.toLowerCase() == 'w') {   // go up
+  <input type=button value="up" onClick="{
   document.getElementById('mySpan01').style.top = parseInt(document.getElementById('mySpan01').style.top) - document.myYmove
 
   myCheckAll()
                         
 }
 
-  if (myAlphaKey.toLowerCase() == 's') {   // go down
+  <input type=button value="down" onClick="{
   document.getElementById('mySpan01').style.top = parseInt(document.getElementById('mySpan01').style.top) + document.myYmove
 
   myCheckAll()
