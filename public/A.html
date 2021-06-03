@@ -1,10 +1,34 @@
+
+<body  onKeyDown="{
+     let myAlphaKey = event.key
+     document.getElementById('myDiv01').innerHTML = 'You typed: ' + myAlphaKey.toLowerCase()
+     
+      if (myAlphaKey.toLowerCase() == 'd') {
+         document.getElementById('myRight').click()       
+         myCheckAll()
+      }
+      if (myAlphaKey.toLowerCase() == 'a') {
+         document.getElementById('myLeft').click()       
+         myCheckAll()
+      }
+      if (myAlphaKey.toLowerCase() == 'w') {
+         document.getElementById('myUp').click()       
+         myCheckAll()
+      }
+      if (myAlphaKey.toLowerCase() == 's') {
+         document.getElementById('myDown').click()       
+         myCheckAll()
+      }
+      
+}">
+
+
 <script>
 
 // Global variables works anywhere in your code
 
 document.myNumBullets = 1;
-document.myBulletMax  = 8;
-
+document.myBulletMax  = 35;
 
 document.myBulletMove = 7   // amount it moves in pixels
 
@@ -16,8 +40,8 @@ document.myBulleTimer = 0;
 
 // span movement
 
-document.myXmove = 15   // amount it moves in pixels
-document.myYmove = 15   // amount it moves in pixels
+document.myXmove = 25   // amount it moves in pixels
+document.myYmove = 25   // amount it moves in pixels
 
 
 function myHitOther(my1,my2){
@@ -37,36 +61,36 @@ function myHitOther(my1,my2){
    }
 }
 
-
 function myCheckAll(){
 
 for (let x=1;  x <= document.myBulletMax; x++){ 
    if (parseInt(document.getElementById('myBullet'+x).style.left) + 65 > window.innerWidth) {  // if we hit the right wall
        document.getElementById('myBullet'+x).style.left = document.getElementById('mySpan01').style.left
+       document.getElementById('myBullet'+x).style.top = document.getElementById('mySpan01').style.top
        document.getElementById('myBullet'+x).style.visibility= 'hidden'
-    }
+   }
 
 
    if (myHitOther('myBullet'+x, 'mySpan02')){
       document.getElementById('mySpan02').style.left = '-400px'
    }
 
-}   // check all bullets finished
+ }   // check all bullets finished
 
-  if(myHitOther('mySpan01', 'mySpan02')){
+   if(myHitOther('myBullet'+x, 'mySpan02')){
     document.getElementById('mySpan02').style.left = '-400px'
     alert('You Lose!')
     location = 'T4A16-bullet-name.html'
-  }
+   }
 
 
-  if(myHitOther('mySpan01', 'mySpan03')){
+   if(myHitOther('myBullet'+x, 'mySpan03')){
     document.getElementById('mySpan03').style.left = '-400px'
     alert('You Win!')
     location = 'https://google.ca'
-  }
+   }
 
-  // your other checks go here
+   // your other checks go here
 
 }
 
@@ -75,6 +99,8 @@ function myBulletFire(){
 
   for (let x=1;  x <= document.myBulletMax; x++){
      document.getElementById('myBullet'+x).style.left = parseInt(document.getElementById('myBullet'+x).style.left) + document.myBulletMove
+     document.getElementById('myBullet'+x).style.top = parseInt(document.getElementById('myBullet'+x).style.tops) + document.myBulletMove
+
   }
 
   myCheckAll()
@@ -83,64 +109,50 @@ function myBulletFire(){
 </script>
 
 
-
 <h1 align=center>T4A16-bullet-name.html</h1>
-
 
 <input type=button value="Fire" onClick="{
     document.myNumBullets += 1
     if (document.myNumBullets > document.myBulletMax){
        document.myNumBullets = 1
     }
-
     document.getElementById('myBullet' + document.myNumBullets).style.left = document.getElementById('mySpan01').style.left
+    document.getElementById('myBullet' + document.myNumBullets).style.top = document.getElementById('mySpan01').style.top
     document.getElementById('myBullet' + document.myNumBullets).style.visibility= 'visible'
-
+   
     clearInterval(document.myBulletTimer)                    
     document.myBulletTimer = setInterval( myBulletFire , document.myBulletDelay);
-
 }">
 
-<body  onKeyDown="{
-     let myAlphaKey = event.key
-     document.getElementById('myDiv01').innerHTML = 'You typed: ' + myAlphaKey.toLowerCase()
   
-<input type=button value="right" onClick="{
+<input type=button value="Right" style="display:none" id="myRight" onClick="{
   document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + document.myXmove
-
   myCheckAll()
                         
-}
-
- <input type=button value="left" onClick="{
+}">
+ <input type=button value="Left" style="display:none" id="myLeft" onClick="{ 
   document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - document.myXmove
-
   myCheckAll()
                         
-}
-
-  <input type=button value="up" onClick="{
+}">
+  <input type=button value="Up" style="display:none" id="myUp" onClick="{    
   document.getElementById('mySpan01').style.top = parseInt(document.getElementById('mySpan01').style.top) - document.myYmove
-
   myCheckAll()
                         
-}
-
-  <input type=button value="down" onClick="{
+}"> 
+  <input type=button value="Down" style="display:none" id="myDown" onClick="{
   document.getElementById('mySpan01').style.top = parseInt(document.getElementById('mySpan01').style.top) + document.myYmove
-
   myCheckAll()
-
-}
                         
 }">
 
+<div id="myDiv01">...</div>
 
 <span title="1" id="mySpan01" style="position:absolute; left:100; top:150; width:45; height:30">
    Span 1 </span><br>
 <span title="2"  id="mySpan02" style="position:absolute; left:300; top:150; width:45; height:30"> 
    Span 2 </span><br>
-<span title="3"  id="mySpan03" style="position:absolute; left:700; top:250; width:45; height:30"> 
+<span title="3"  id="mySpan03" style="position:absolute; left:500; top:250; width:45; height:30"> 
    Span 3 </span><br>
 
 
@@ -149,23 +161,105 @@ function myBulletFire(){
 <font color=red>x</font></span><br>
 
 <span title="b2" id="myBullet2" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=green>x</font></span><br>
+<font color=red>x</font></span><br>
 
 <span title="b3" id="myBullet3" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=yellow>x</font></span><br>
+<font color=red>x</font></span><br>
 
 <span title="b4" id="myBullet4" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=blue>x</font></span><br>
+<font color=red>x</font></span><br>
 
 <span title="b5" id="myBullet5" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
 <font color=red>x</font></span><br>
 
 <span title="b6" id="myBullet6" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=green>x</font></span><br>
+<font color=red>x</font></span><br>
 
 <span title="b7" id="myBullet7" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=yellow>x</font></span><br>
+<font color=red>x</font></span><br>
 
 <span title="b8" id="myBullet8" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=blue>x</font></span><br>
+<font color=red>x</font></span><br>
+
+<span title="b9" id="myBullet9" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b10" id="myBullet10" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b11" id="myBullet11" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b12" id="myBullet12" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b13" id="myBullet13" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b14" id="myBullet14" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b15" id="myBullet15" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b16" id="myBullet16" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b17" id="myBullet17" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b18" id="myBullet18" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b19" id="myBullet19" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b20" id="myBullet20" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b21" id="myBullet21" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b22" id="myBullet22" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b23" id="myBullet23" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b24" id="myBullet24" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b25" id="myBullet25" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b26" id="myBullet26" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b27" id="myBullet27" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b28" id="myBullet28" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b29" id="myBullet29" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b30" id="myBullet30" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b31" id="myBullet31" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b32" id="myBullet32" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b33" id="myBullet33" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b34" id="myBullet34" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
+<span title="b35" id="myBullet35" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
+<font color=red>x</font></span><br>
+
 
