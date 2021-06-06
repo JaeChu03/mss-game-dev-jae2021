@@ -241,6 +241,14 @@ for (let x=1;  x <= document.myBulletMax; x++){
          document.getElementById('mySpan21').style.left = '-400px'
       }
    }
+  if (myHitOther('myBullet'+x, 'mySpan22')){
+    // comment out if bullet vertical
+     document.getElementById('myBullet' + x).style.top = document.getElementById('mySpan01').style.top
+  
+      if (myHitOther('myBullet'+x, 'mySpan22')){
+         document.getElementById('mySpan22').style.left = '-400px'
+      }
+   }
 
 }   // check all bullets finished
      
@@ -260,6 +268,58 @@ for (let x=1;  x <= document.myBulletMax; x++){
    // your other checks go here
 
 }     
+
+function myXAuto(){
+
+  document.getElementById('mySpan02').style.left = parseInt(document.getElementById('mySpan02').style.left) - document.myAmove 
+ 
+  document.getElementById('mySpan03').style.left = parseInt(document.getElementById('mySpan03').style.left) - document.myAmove 
+
+  document.getElementById('mySpan04').style.left = parseInt(document.getElementById('mySpan04').style.left) - document.myAmove 
+  
+  document.getElementById('mySpan05').style.left = parseInt(document.getElementById('mySpan05').style.left) - document.myAmove 
+ 
+  document.getElementById('mySpan06').style.left = parseInt(document.getElementById('mySpan06').style.left) - document.myAmove 
+
+  document.getElementById('mySpan07').style.left = parseInt(document.getElementById('mySpan07').style.left) - document.myAmove 
+
+  document.getElementById('mySpan08').style.left = parseInt(document.getElementById('mySpan08').style.left) - document.myAmove 
+ 
+  document.getElementById('mySpan09').style.left = parseInt(document.getElementById('mySpan09').style.left) - document.myAmove 
+
+  document.getElementById('mySpan10').style.left = parseInt(document.getElementById('mySpan10').style.left) - document.myAmove 
+  
+  document.getElementById('mySpan11').style.left = parseInt(document.getElementById('mySpan11').style.left) - document.myAmove 
+ 
+  document.getElementById('mySpan12').style.left = parseInt(document.getElementById('mySpan12').style.left) - document.myAmove 
+
+  document.getElementById('mySpan13').style.left = parseInt(document.getElementById('mySpan13').style.left) - document.myAmove 
+  
+  document.getElementById('mySpan14').style.left = parseInt(document.getElementById('mySpan14').style.left) - document.myAmove 
+ 
+  document.getElementById('mySpan15').style.left = parseInt(document.getElementById('mySpan15').style.left) - document.myAmove 
+
+  document.getElementById('mySpan16').style.left = parseInt(document.getElementById('mySpan16').style.left) - document.myAmove 
+
+  document.getElementById('mySpan17').style.left = parseInt(document.getElementById('mySpan17').style.left) - document.myAmove 
+ 
+  document.getElementById('mySpan18').style.left = parseInt(document.getElementById('mySpan18').style.left) - document.myAmove 
+
+  document.getElementById('mySpan19').style.left = parseInt(document.getElementById('mySpan19').style.left) - document.myAmove 
+  
+  document.getElementById('mySpan20').style.left = parseInt(document.getElementById('mySpan20').style.left) - document.myAmove 
+
+  document.getElementById('mySpan21').style.left = parseInt(document.getElementById('mySpan21').style.left) - document.myAmove
+
+  document.getElementById('mySpan22').style.left = parseInt(document.getElementById('mySpan22').style.left) - document.myAmove
+
+  myCheckAll()
+}
+
+clearInterval(document.myXtimer)                    
+document.myXtimer = setInterval( myXAuto , document.myAspeed);
+
+//the moving to the <--
 
 function myBulletFire(){
 
@@ -319,44 +379,47 @@ function myBulletFire(){
    Span 1 </span><br>
 <span title="2"  id="mySpan02" style="position:absolute; left:300; top:150; width:45; height:30"> 
    Span 2 </span><br>
-<span title="3"  id="mySpan03" style="position:absolute; left:500; top:250; width:45; height:30"> 
+<span title="3"  id="mySpan03" style="position:absolute; left:300; top:250; width:45; height:30"> 
    Span 3 </span><br>
-<span title="4"  id="mySpan04" style="position:absolute; left:100; top:200; width:45; height:30">
+<span title="4"  id="mySpan04" style="position:absolute; left:300; top:350; width:45; height:30">
    Span 4 </span><br>
-<span title="5"  id="mySpan05" style="position:absolute; left:300; top:300; width:45; height:30"> 
+<span title="5"  id="mySpan05" style="position:absolute; left:500; top:150; width:45; height:30"> 
    Span 5 </span><br>
-<span title="6"  id="mySpan06" style="position:absolute; left:500; top:400; width:45; height:30"> 
+<span title="6"  id="mySpan06" style="position:absolute; left:500; top:250; width:45; height:30"> 
    Span 6 </span><br>
-<span title="7"  id="mySpan07" style="position:absolute; left:100; top:350; width:45; height:30"> 
+<span title="7"  id="mySpan07" style="position:absolute; left:500; top:350; width:45; height:30"> 
    Span 7 </span><br>
-<span title="8"  id="mySpan08" style="position:absolute; left:300; top:550; width:45; height:30"> 
+<span title="8"  id="mySpan08" style="position:absolute; left:700; top:150; width:45; height:30"> 
    Span 8 </span><br>
-<span title="9"  id="mySpan09" style="position:absolute; left:500; top:600; width:45; height:30">
+<span title="9"  id="mySpan09" style="position:absolute; left:700; top:250; width:45; height:30">
    Span 9 </span><br>
-<span title="10"  id="mySpan10" style="position:absolute; left:100; top:500; width:45; height:30"> 
+<span title="10"  id="mySpan10" style="position:absolute; left:700; top:350; width:45; height:30"> 
    Span 10 </span><br>
-<span title="11"  id="mySpan11" style="position:absolute; left:200; top:550; width:45; height:30"> 
+<span title="11"  id="mySpan11" style="position:absolute; left:900; top:150; width:45; height:30"> 
    Span 11 </span><br>
-<span title="12"  id="mySpan12" style="position:absolute; left:300; top:150; width:45; height:30"> 
+<span title="12"  id="mySpan12" style="position:absolute; left:900; top:250; width:45; height:30"> 
    Span 12 </span><br>
-<span title="13"  id="mySpan13" style="position:absolute; left:500; top:250; width:45; height:30"> 
+<span title="13"  id="mySpan13" style="position:absolute; left:900; top:350; width:45; height:30"> 
    Span 13 </span><br>
-<span title="14"  id="mySpan14" style="position:absolute; left:100; top:200; width:45; height:30">
+<span title="14"  id="mySpan14" style="position:absolute; left:1200; top:150; width:45; height:30">
    Span 14 </span><br>
-<span title="15"  id="mySpan15" style="position:absolute; left:300; top:300; width:45; height:30"> 
+<span title="15"  id="mySpan15" style="position:absolute; left:1200; top:250; width:45; height:30"> 
    Span 15 </span><br>
-<span title="16"  id="mySpan16" style="position:absolute; left:500; top:400; width:45; height:30"> 
+<span title="16"  id="mySpan16" style="position:absolute; left:1200; top:350; width:45; height:30"> 
    Span 16 </span><br>
-<span title="17"  id="mySpan17" style="position:absolute; left:100; top:350; width:45; height:30"> 
+<span title="17"  id="mySpan17" style="position:absolute; left:1500; top:150; width:45; height:30"> 
    Span 17 </span><br>
-<span title="18"  id="mySpan18" style="position:absolute; left:300; top:550; width:45; height:30"> 
+<span title="18"  id="mySpan18" style="position:absolute; left:1500; top:250; width:45; height:30"> 
    Span 18 </span><br>
-<span title="19"  id="mySpan19" style="position:absolute; left:500; top:600; width:45; height:30">
+<span title="19"  id="mySpan19" style="position:absolute; left:1500; top:350; width:45; height:30">
    Span 19 </span><br>
-<span title="20"  id="mySpan20" style="position:absolute; left:100; top:500; width:45; height:30"> 
+<span title="20"  id="mySpan20" style="position:absolute; left:1800; top:150; width:45; height:30"> 
    Span 20 </span><br>
-<span title="21"  id="mySpan21" style="position:absolute; left:200; top:550; width:45; height:30"> 
+<span title="21"  id="mySpan21" style="position:absolute; left:1800; top:250; width:45; height:30"> 
    Span 21 </span><br>
+<span title="22"  id="mySpan22" style="position:absolute; left:1800; top:350; width:45; height:30"> 
+   Span 22 </span><br>
+
 
 
 
