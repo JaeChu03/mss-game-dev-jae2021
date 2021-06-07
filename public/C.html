@@ -47,7 +47,8 @@ document.myBulleTimer = 0;
 document.myXmove = 25   // amount it moves in pixels
 document.myYmove = 25   // amount it moves in pixels
 
-document.myAmove = 3   // amount it moves in pixels
+document.myAmove = 3  
+document.myBmove = 5 
 
 document.myXtimer = 0;
 document.myYtimer = 0;
@@ -394,51 +395,50 @@ function myBulletFire(){
 
 <div id="myDiv01">...</div>
 
-<span title="1"  id="mySpan01" style="position:absolute; left:100; top:150; width:45; height:30">
+<span title="1"  id="mySpan01" style="position:absolute; left:100; top:600; width:45; height:30">
 <img src="https://th.bing.com/th/id/Rc993de48cb644adfd6b257dffce71fda?rik=bwn83V3J2hWyNA&riu=http%3a%2f%2fpixeljoint.com%2ffiles%2ficons%2ffull%2fspaceship_by_simeontemplard7ur00h.gif&ehk=H1bgwCJ1h%2fx26HKxLnYSC8nfElfWFVxy7K64utEqTsQ%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
-<span title="2"  id="mySpan02" style="position:absolute; left:300; top:150; width:45; height:30"> 
-   Span 2 </span><br>
-<span title="3"  id="mySpan03" style="position:absolute; left:300; top:250; width:45; height:30"> 
-   Span 3 </span><br>
-<span title="4"  id="mySpan04" style="position:absolute; left:300; top:350; width:45; height:30">
-   Span 4 </span><br>
-<span title="5"  id="mySpan05" style="position:absolute; left:500; top:150; width:45; height:30"> 
-   Span 5 </span><br>
-<span title="6"  id="mySpan06" style="position:absolute; left:500; top:250; width:45; height:30"> 
-   Span 6 </span><br>
-<span title="7"  id="mySpan07" style="position:absolute; left:500; top:350; width:45; height:30"> 
-   Span 7 </span><br>
-<span title="8"  id="mySpan08" style="position:absolute; left:700; top:150; width:45; height:30"> 
-   Span 8 </span><br>
-<span title="9"  id="mySpan09" style="position:absolute; left:700; top:250; width:45; height:30">
-   Span 9 </span><br>
-<span title="10"  id="mySpan10" style="position:absolute; left:700; top:350; width:45; height:30"> 
-   Span 10 </span><br>
-<span title="11"  id="mySpan11" style="position:absolute; left:900; top:150; width:45; height:30"> 
-   Span 11 </span><br>
-<span title="12"  id="mySpan12" style="position:absolute; left:900; top:250; width:45; height:30"> 
-   Span 12 </span><br>
-<span title="13"  id="mySpan13" style="position:absolute; left:900; top:350; width:45; height:30"> 
-   Span 13 </span><br>
-<span title="14"  id="mySpan14" style="position:absolute; left:1200; top:150; width:45; height:30">
-   Span 14 </span><br>
-<span title="15"  id="mySpan15" style="position:absolute; left:1200; top:250; width:45; height:30"> 
-   Span 15 </span><br>
-<span title="16"  id="mySpan16" style="position:absolute; left:1200; top:350; width:45; height:30"> 
-   Span 16 </span><br>
-<span title="17"  id="mySpan17" style="position:absolute; left:1500; top:150; width:45; height:30"> 
-   Span 17 </span><br>
-<span title="18"  id="mySpan18" style="position:absolute; left:1500; top:250; width:45; height:30"> 
-   Span 18 </span><br>
-<span title="19"  id="mySpan19" style="position:absolute; left:1500; top:350; width:45; height:30">
-   Span 19 </span><br>
-<span title="20"  id="mySpan20" style="position:absolute; left:1800; top:150; width:45; height:30"> 
-   Span 20 </span><br>
-<span title="21"  id="mySpan21" style="position:absolute; left:1800; top:250; width:45; height:30"> 
-   Span 21 </span><br>
-<span title="22"  id="mySpan22" style="position:absolute; left:1800; top:350; width:45; height:30"> 
+<span title="2"  id="mySpan02" style="position:absolute; left:1500; top:150; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="3"  id="mySpan03" style="position:absolute; left:1300; top:250; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="4"  id="mySpan04" style="position:absolute; left:1800; top:350; width:45; height:30">
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="5"  id="mySpan05" style="position:absolute; left:1200; top:450; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="6"  id="mySpan06" style="position:absolute; left:900; top:550; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="7"  id="mySpan07" style="position:absolute; left:1600; top:650; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="8"  id="mySpan08" style="position:absolute; left:2200; top:150; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="9"  id="mySpan09" style="position:absolute; left:2200; top:400; width:45; height:30">
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="10"  id="mySpan10" style="position:absolute; left:2500; top:475; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="11"  id="mySpan11" style="position:absolute; left:3000; top:150; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="12"  id="mySpan12" style="position:absolute; left:2700; top:250; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="13"  id="mySpan13" style="position:absolute; left:3150; top:520; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="14"  id="mySpan14" style="position:absolute; left:3500; top:150; width:45; height:30">
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="15"  id="mySpan15" style="position:absolute; left:3650; top:250; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="16"  id="mySpan16" style="position:absolute; left:3500; top:450; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="17"  id="mySpan17" style="position:absolute; left:3300; top:350; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="18"  id="mySpan18" style="position:absolute; left:4200; top:200; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="19"  id="mySpan19" style="position:absolute; left:4000; top:350; width:45; height:30">
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="20"  id="mySpan20" style="position:absolute; left:4000; top:550; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="21"  id="mySpan21" style="position:absolute; left:4500; top:250; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="22"  id="mySpan22" style="position:absolute; left:4500; top:410; width:45; height:30"> 
    Span 22 </span><br>
-
 
 
 <span title="b1" id="myBullet1" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
