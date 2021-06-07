@@ -272,31 +272,16 @@ for (let x=1;  x <= document.myBulletMax; x++){
       }
    }
 
- if(parseInt(document.getElementById('myTextLife').value)  >=5  ){    // life points at zero
-    alert('Win!')
-    location = 'https://www.google.ca/'    // refresh page
-  }  
-
-     
 }   // check all bullets finished
      
-   if(myHitOther('myBullet'+x, 'mySpan02')){
-    document.getElementById('mySpan02').style.left = '-400px'
-    alert('You Lose!')
-    location = 'T4A16-bullet-name.html'
-   }
+if (parseInt(document.getElementById('myTextScore').value) > 20){
 
-
-   if(myHitOther('myBullet'+x, 'mySpan03')){
-    document.getElementById('mySpan03').style.left = '-400px'
-    alert('You Win!')
-    location = 'https://google.ca'
-   }
+    alert('cool')
+    }
 
    // your other checks go here
 
-}     
-
+}   
 
 function myXAuto(){
 
@@ -453,7 +438,6 @@ function myBulletFire(){
    Span 21 </span><br>
 <span title="22"  id="mySpan22" style="position:absolute; left:1800; top:350; width:45; height:30"> 
    Span 22 </span><br>
-
 
 
 
