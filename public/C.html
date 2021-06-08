@@ -47,8 +47,8 @@ document.myBulleTimer = 0;
 document.myXmove = 25   // amount it moves in pixels
 document.myYmove = 25   // amount it moves in pixels
 
-document.myAmove = 3  
-document.myBmove = 5 
+document.myAmove = 7
+document.myBmove = 14
 
 document.myXtimer = 0;
 document.myYtimer = 0;
@@ -335,17 +335,202 @@ for (let x=1;  x <= document.myBulletMax; x++){
            document.getElementById('myTextScore').value = parseInt(document.getElementById('myTextScore').value) + 1
       }
    }
-
+  if (myHitOther('myBullet'+x, 'mySpan81')){
+    // comment out if bullet vertical
+     document.getElementById('myBullet' + x).style.top = document.getElementById('mySpan01').style.top
+  
+      if (myHitOther('myBullet'+x, 'mySpan81')){
+         document.getElementById('mySpan81').style.left = '-400px'
+           document.getElementById('myTextScore').value = parseInt(document.getElementById('myTextScore').value) + 5
+      }
+   }
+  if (myHitOther('myBullet'+x, 'mySpan82')){
+    // comment out if bullet vertical
+     document.getElementById('myBullet' + x).style.top = document.getElementById('mySpan01').style.top
+  
+      if (myHitOther('myBullet'+x, 'mySpan82')){
+         document.getElementById('mySpan82').style.left = '-400px'
+           document.getElementById('myTextScore').value = parseInt(document.getElementById('myTextScore').value) + 5
+      }
+   }
+  if (myHitOther('myBullet'+x, 'mySpan83')){
+    // comment out if bullet vertical
+     document.getElementById('myBullet' + x).style.top = document.getElementById('mySpan01').style.top
+  
+      if (myHitOther('myBullet'+x, 'mySpan83')){
+         document.getElementById('mySpan83').style.left = '-400px'
+           document.getElementById('myTextScore').value = parseInt(document.getElementById('myTextScore').value) + 5
+      }
+   }
+  if (myHitOther('myBullet'+x, 'mySpan84')){
+    // comment out if bullet vertical
+     document.getElementById('myBullet' + x).style.top = document.getElementById('mySpan01').style.top
+  
+      if (myHitOther('myBullet'+x, 'mySpan84')){
+         document.getElementById('mySpan84').style.left = '-400px'
+           document.getElementById('myTextScore').value = parseInt(document.getElementById('myTextScore').value) + 5
+      }
+   }
 
 }   // check all bullets finished
-
+// asteriods that can kill
 if(myHitOther('mySpan01', 'mySpan30')){
     document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
   }
-     
-if (parseInt(document.getElementById('myTextScore').value) > 20){
+if(myHitOther('mySpan01', 'mySpan31')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan32')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan33')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan34')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan35')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan36')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan37')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan38')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan39')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan40')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan41')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan42')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan43')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan44')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan45')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan46')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan47')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan48')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan49')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan50')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan51')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan52')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan53')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan54')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan55')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan56')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan57')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan58')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan59')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan60')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan61')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan62')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan63')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan64')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan65')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan66')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan67')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan68')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan69')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan70')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan71')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan72')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan73')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan74')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan75')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan76')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan77')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan78')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan79')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
+if(myHitOther('mySpan01', 'mySpan80')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
 
-    alert('cool')
+if (parseInt(document.getElementById('myTextScore').value) > 25){
+
+    alert('You won!')
     location = 'https://google.ca'
     }
 
@@ -420,6 +605,115 @@ function myXAuto(){
   
   document.getElementById('mySpan30').style.left = parseInt(document.getElementById('mySpan30').style.left) - document.myAmove
 
+  document.getElementById('mySpan31').style.left = parseInt(document.getElementById('mySpan31').style.left) - document.myAmove 
+
+  document.getElementById('mySpan32').style.left = parseInt(document.getElementById('mySpan32').style.left) - document.myAmove
+
+  document.getElementById('mySpan33').style.left = parseInt(document.getElementById('mySpan33').style.left) - document.myAmove
+
+  document.getElementById('mySpan34').style.left = parseInt(document.getElementById('mySpan34').style.left) - document.myAmove 
+
+  document.getElementById('mySpan35').style.left = parseInt(document.getElementById('mySpan35').style.left) - document.myAmove
+
+  document.getElementById('mySpan36').style.left = parseInt(document.getElementById('mySpan36').style.left) - document.myAmove
+
+  document.getElementById('mySpan37').style.left = parseInt(document.getElementById('mySpan37').style.left) - document.myAmove 
+
+  document.getElementById('mySpan38').style.left = parseInt(document.getElementById('mySpan38').style.left) - document.myAmove
+
+  document.getElementById('mySpan39').style.left = parseInt(document.getElementById('mySpan39').style.left) - document.myAmove
+  
+  document.getElementById('mySpan40').style.left = parseInt(document.getElementById('mySpan40').style.left) - document.myAmove
+ 
+  document.getElementById('mySpan41').style.left = parseInt(document.getElementById('mySpan41').style.left) - document.myAmove
+
+  document.getElementById('mySpan42').style.left = parseInt(document.getElementById('mySpan42').style.left) - document.myAmove 
+
+  document.getElementById('mySpan43').style.left = parseInt(document.getElementById('mySpan43').style.left) - document.myAmove
+
+  document.getElementById('mySpan44').style.left = parseInt(document.getElementById('mySpan44').style.left) - document.myAmove
+
+  document.getElementById('mySpan45').style.left = parseInt(document.getElementById('mySpan45').style.left) - document.myAmove 
+
+  document.getElementById('mySpan46').style.left = parseInt(document.getElementById('mySpan46').style.left) - document.myAmove
+
+  document.getElementById('mySpan47').style.left = parseInt(document.getElementById('mySpan47').style.left) - document.myAmove
+
+  document.getElementById('mySpan48').style.left = parseInt(document.getElementById('mySpan48').style.left) - document.myAmove 
+
+  document.getElementById('mySpan49').style.left = parseInt(document.getElementById('mySpan49').style.left) - document.myAmove
+
+  document.getElementById('mySpan50').style.left = parseInt(document.getElementById('mySpan50').style.left) - document.myAmove
+    
+  document.getElementById('mySpan51').style.left = parseInt(document.getElementById('mySpan51').style.left) - document.myAmove
+
+  document.getElementById('mySpan52').style.left = parseInt(document.getElementById('mySpan52').style.left) - document.myAmove 
+
+  document.getElementById('mySpan53').style.left = parseInt(document.getElementById('mySpan53').style.left) - document.myAmove
+
+  document.getElementById('mySpan54').style.left = parseInt(document.getElementById('mySpan54').style.left) - document.myAmove
+
+  document.getElementById('mySpan55').style.left = parseInt(document.getElementById('mySpan55').style.left) - document.myAmove 
+
+  document.getElementById('mySpan56').style.left = parseInt(document.getElementById('mySpan56').style.left) - document.myAmove
+
+  document.getElementById('mySpan57').style.left = parseInt(document.getElementById('mySpan57').style.left) - document.myAmove
+
+  document.getElementById('mySpan58').style.left = parseInt(document.getElementById('mySpan58').style.left) - document.myAmove 
+
+  document.getElementById('mySpan59').style.left = parseInt(document.getElementById('mySpan59').style.left) - document.myAmove
+
+  document.getElementById('mySpan60').style.left = parseInt(document.getElementById('mySpan60').style.left) - document.myAmove
+  
+  document.getElementById('mySpan61').style.left = parseInt(document.getElementById('mySpan61').style.left) - document.myAmove
+ 
+  document.getElementById('mySpan62').style.left = parseInt(document.getElementById('mySpan62').style.left) - document.myAmove
+
+  document.getElementById('mySpan63').style.left = parseInt(document.getElementById('mySpan63').style.left) - document.myAmove 
+
+  document.getElementById('mySpan64').style.left = parseInt(document.getElementById('mySpan64').style.left) - document.myAmove
+
+  document.getElementById('mySpan65').style.left = parseInt(document.getElementById('mySpan65').style.left) - document.myAmove
+
+  document.getElementById('mySpan66').style.left = parseInt(document.getElementById('mySpan66').style.left) - document.myAmove 
+
+  document.getElementById('mySpan67').style.left = parseInt(document.getElementById('mySpan67').style.left) - document.myAmove
+
+  document.getElementById('mySpan68').style.left = parseInt(document.getElementById('mySpan68').style.left) - document.myAmove
+
+  document.getElementById('mySpan69').style.left = parseInt(document.getElementById('mySpan69').style.left) - document.myAmove 
+
+  document.getElementById('mySpan70').style.left = parseInt(document.getElementById('mySpan70').style.left) - document.myAmove
+
+  document.getElementById('mySpan71').style.left = parseInt(document.getElementById('mySpan71').style.left) - document.myAmove
+ 
+  document.getElementById('mySpan72').style.left = parseInt(document.getElementById('mySpan72').style.left) - document.myAmove
+
+  document.getElementById('mySpan73').style.left = parseInt(document.getElementById('mySpan73').style.left) - document.myAmove 
+
+  document.getElementById('mySpan74').style.left = parseInt(document.getElementById('mySpan74').style.left) - document.myAmove
+
+  document.getElementById('mySpan75').style.left = parseInt(document.getElementById('mySpan75').style.left) - document.myAmove
+
+  document.getElementById('mySpan76').style.left = parseInt(document.getElementById('mySpan76').style.left) - document.myAmove 
+
+  document.getElementById('mySpan77').style.left = parseInt(document.getElementById('mySpan77').style.left) - document.myAmove
+
+  document.getElementById('mySpan78').style.left = parseInt(document.getElementById('mySpan78').style.left) - document.myAmove
+
+  document.getElementById('mySpan79').style.left = parseInt(document.getElementById('mySpan79').style.left) - document.myAmove 
+
+  document.getElementById('mySpan80').style.left = parseInt(document.getElementById('mySpan80').style.left) - document.myAmove
+ 
+  document.getElementById('mySpan81').style.left = parseInt(document.getElementById('mySpan81').style.left) - document.myBmove
+
+  document.getElementById('mySpan82').style.left = parseInt(document.getElementById('mySpan82').style.left) - document.myBmove
+
+  document.getElementById('mySpan83').style.left = parseInt(document.getElementById('mySpan83').style.left) - document.myBmove
+
+  document.getElementById('mySpan84').style.left = parseInt(document.getElementById('mySpan84').style.left) - document.myBmove
+ 
+ 
   myCheckAll()
 }
 
@@ -442,7 +736,7 @@ function myBulletFire(){
 </script>
 
 
-<h1 align=center>T4A16-bullet-name.html</h1>
+<h1 align=center>Level 2 [Jaehee Chung]</h1>
 <h4 align=left>Use WASD for control and L for shooting</h4>
 
 <span style="color:#daa520">Score: <input id="myTextScore" type=text value=0 ><br></span>
@@ -545,8 +839,122 @@ function myBulletFire(){
 <img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
 <span title="29"  id="mySpan29" style="position:absolute; left:5400; top:450; width:45; height:30"> 
 <img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+
+
 <span title="30"  id="mySpan30" style="position:absolute; left:700; top:450; width:45; height:30"> 
-<img src="https://th.bing.com/th/id/Rbdf616b0559a27f2fff3d5a2320b252c?rik=yjYEO3lJwPnw6g&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fb0d28fcc8a7f281.png&ehk=M4diTFPly3EMmrHLhXFq6BzwAfW3X%2bP2EwUz%2falQnsk%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="31"  id="mySpan31" style="position:absolute; left:800; top:250; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="32"  id="mySpan32" style="position:absolute; left:900; top:650; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="33"  id="mySpan33" style="position:absolute; left:1000; top:350; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="34"  id="mySpan34" style="position:absolute; left:1100; top:75; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="35"  id="mySpan35" style="position:absolute; left:1200; top:120; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="36"  id="mySpan36" style="position:absolute; left:1300; top:575; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="37"  id="mySpan37" style="position:absolute; left:1400; top:600; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="38"  id="mySpan38" style="position:absolute; left:1500; top:300; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="39"  id="mySpan39" style="position:absolute; left:1600; top:550; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="40"  id="mySpan40" style="position:absolute; left:1700; top:200; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="41"  id="mySpan41" style="position:absolute; left:1800; top:490; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="42"  id="mySpan42" style="position:absolute; left:1900; top:50; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="43"  id="mySpan43" style="position:absolute; left:2000; top:150; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="44"  id="mySpan44" style="position:absolute; left:2100; top:570; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="45"  id="mySpan45" style="position:absolute; left:2200; top:300; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="46"  id="mySpan46" style="position:absolute; left:2300; top:190; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="47"  id="mySpan47" style="position:absolute; left:2400; top:610; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="48"  id="mySpan48" style="position:absolute; left:2450; top:450; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="49"  id="mySpan49" style="position:absolute; left:2600; top:320; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="50"  id="mySpan50" style="position:absolute; left:2700; top:90; width:45; height:30"> 
+
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="51"  id="mySpan51" style="position:absolute; left:2800; top:450; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="52"  id="mySpan52" style="position:absolute; left:2900; top:250; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="53"  id="mySpan53" style="position:absolute; left:3000; top:650; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="54"  id="mySpan54" style="position:absolute; left:3100; top:350; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="55"  id="mySpan55" style="position:absolute; left:3200; top:75; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="56"  id="mySpan56" style="position:absolute; left:3300; top:120; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="57"  id="mySpan57" style="position:absolute; left:3400; top:575; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="58"  id="mySpan58" style="position:absolute; left:3500; top:600; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="59"  id="mySpan59" style="position:absolute; left:3600; top:300; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="60"  id="mySpan60" style="position:absolute; left:3700; top:550; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="61"  id="mySpan61" style="position:absolute; left:3800; top:200; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="62"  id="mySpan62" style="position:absolute; left:3900; top:490; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="63"  id="mySpan63" style="position:absolute; left:4000; top:50; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="64"  id="mySpan64" style="position:absolute; left:4100; top:150; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="65"  id="mySpan65" style="position:absolute; left:4200; top:570; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="66"  id="mySpan66" style="position:absolute; left:4300; top:300; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="67"  id="mySpan67" style="position:absolute; left:4400; top:190; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="68"  id="mySpan68" style="position:absolute; left:4500; top:610; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="69"  id="mySpan69" style="position:absolute; left:4650; top:450; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="70"  id="mySpan70" style="position:absolute; left:4700; top:320; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="71"  id="mySpan71" style="position:absolute; left:4800; top:200; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="72"  id="mySpan72" style="position:absolute; left:4900; top:490; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="73"  id="mySpan73" style="position:absolute; left:5000; top:50; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="74"  id="mySpan74" style="position:absolute; left:5100; top:150; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="75"  id="mySpan75" style="position:absolute; left:5200; top:570; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="76"  id="mySpan76" style="position:absolute; left:5300; top:300; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="77"  id="mySpan77" style="position:absolute; left:5400; top:190; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="78"  id="mySpan78" style="position:absolute; left:5500; top:610; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="79"  id="mySpan79" style="position:absolute; left:5650; top:450; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+<span title="80"  id="mySpan80" style="position:absolute; left:5700; top:320; width:45; height:30"> 
+<img src="https://webstockreview.net/images/asteroid-clipart-cartoon-20.gif" width="50" height="50"></span><br>
+
+
+<span title="81"  id="mySpan81" style="position:absolute; left:2800; top:75; width:45; height:30"> 
+<img src="https://i.redd.it/4rrjy31hxyl11.gif" width="50" height="50"></span><br>
+<span title="82"  id="mySpan82" style="position:absolute; left:2900; top:575; width:45; height:30"> 
+<img src="https://i.redd.it/4rrjy31hxyl11.gif" width="50" height="50"></span><br>
+<span title="83"  id="mySpan83" style="position:absolute; left:5600; top:75; width:45; height:30"> 
+<img src="https://i.redd.it/4rrjy31hxyl11.gif" width="50" height="50"></span><br>
+<span title="84"  id="mySpan84" style="position:absolute; left:5800; top:575; width:45; height:30"> 
+<img src="https://i.redd.it/4rrjy31hxyl11.gif" width="50" height="50"></span><br>
+
 
 
 
