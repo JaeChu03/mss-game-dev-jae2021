@@ -336,11 +336,24 @@ for (let x=1;  x <= document.myBulletMax; x++){
       }
    }
 
+
 }   // check all bullets finished
+
+if(myHitOther('mySpan01', 'mySpan30')){
+    document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
+  }
      
 if (parseInt(document.getElementById('myTextScore').value) > 20){
 
     alert('cool')
+    location = 'https://google.ca'
+    }
+
+
+if (parseInt(document.getElementById('myTextLife').value) < 0){
+
+    alert('dead')
+    location = 'https://google.ca'
     }
 
    // your other checks go here
@@ -404,6 +417,8 @@ function myXAuto(){
   document.getElementById('mySpan28').style.left = parseInt(document.getElementById('mySpan28').style.left) - document.myAmove
   
   document.getElementById('mySpan29').style.left = parseInt(document.getElementById('mySpan29').style.left) - document.myAmove
+  
+  document.getElementById('mySpan30').style.left = parseInt(document.getElementById('mySpan30').style.left) - document.myAmove
 
   myCheckAll()
 }
@@ -432,7 +447,7 @@ function myBulletFire(){
 
 <span style="color:#daa520">Score: <input id="myTextScore" type=text value=0 ><br></span>
 
-<span style="color:#daa520">Life: <input id="myTextLife" type=number value=1 ><br><br></span>
+<span style="color:#daa520"><input id="myTextLife" style="display:none" type=number value=1 ><br><br></span>
 
 
 <input type=button value="Fire" style="display:none" id="myFire" onClick="{
@@ -530,6 +545,8 @@ function myBulletFire(){
 <img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
 <span title="29"  id="mySpan29" style="position:absolute; left:5400; top:450; width:45; height:30"> 
 <img src="https://th.bing.com/th/id/Rc9546007f4d017d86955dd9f0ad6877d?rik=UtewVf3C5gToug&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fab051bcc8492100.png&ehk=qIoeoAcqFdFBXEAFsPf61UbGn%2bPa3Rc8%2f%2fb4x1WLA8o%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
+<span title="30"  id="mySpan30" style="position:absolute; left:700; top:450; width:45; height:30"> 
+<img src="https://th.bing.com/th/id/Rbdf616b0559a27f2fff3d5a2320b252c?rik=yjYEO3lJwPnw6g&riu=http%3a%2f%2fpixelartmaker.com%2fart%2fb0d28fcc8a7f281.png&ehk=M4diTFPly3EMmrHLhXFq6BzwAfW3X%2bP2EwUz%2falQnsk%3d&risl=&pid=ImgRaw" width="50" height="50"></span><br>
 
 
 
