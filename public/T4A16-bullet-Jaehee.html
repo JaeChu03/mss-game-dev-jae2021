@@ -1,40 +1,12 @@
-<body  onKeyDown="{
-     let myAlphaKey = event.key
-     document.getElementById('myDiv01').innerHTML = 'You typed: ' + myAlphaKey.toLowerCase()
-     
-      if (myAlphaKey.toLowerCase() == 'd') {
-         document.getElementById('myRight').click()       
-         myCheckAll()
-      }
-      if (myAlphaKey.toLowerCase() == 'a') {
-         document.getElementById('myLeft').click()       
-         myCheckAll()
-      }
-      if (myAlphaKey.toLowerCase() == 'w') {
-         document.getElementById('myUp').click()       
-         myCheckAll()
-      }
-      if (myAlphaKey.toLowerCase() == 's') {
-         document.getElementById('myDown').click()       
-         myCheckAll()
-      }
-      if (myAlphaKey.toLowerCase() == 'l') {
-         document.getElementById('myFire').click()       
-         myCheckAll()
-      }
-      
-      
-}">
-
-
 <script>
 
 // Global variables works anywhere in your code
 
 document.myNumBullets = 1;
-document.myBulletMax  = 300;
+document.myBulletMax  = 5;
 
-document.myBulletMove = 7   // amount it moves in pixels
+
+document.myBulletMove = 3   // amount it moves in pixels
 
 document.myBulletDelay = 20 // speed as a delay in milliseconds bigger is slower
 
@@ -44,8 +16,9 @@ document.myBulleTimer = 0;
 
 // span movement
 
-document.myXmove = 25   // amount it moves in pixels
-document.myYmove = 25   // amount it moves in pixels
+document.myXmove = 5   // amount it moves in pixels
+document.myYmove = 4
+
 
 
 function myHitOther(my1,my2){
@@ -65,18 +38,20 @@ function myHitOther(my1,my2){
    }
 }
 
+
 function myCheckAll(){
 
 for (let x=1;  x <= document.myBulletMax; x++){ 
+
    if (parseInt(document.getElementById('myBullet'+x).style.left) + 65 > window.innerWidth) {  // if we hit the right wall
        document.getElementById('myBullet'+x).style.left = document.getElementById('mySpan01').style.left
-       document.getElementById('myBullet'+x).style.top = document.getElementById('mySpan01').style.top
        document.getElementById('myBullet'+x).style.visibility= 'hidden'
-   }
-
-    // document.getElementById('myBullet' + x).style.top = document.getElementById('mySpan01').style.top
+    }
+     
    
-  if (myHitOther('myBullet'+x, 'mySpan02')){
+
+
+   if (myHitOther('myBullet'+x, 'mySpan02')){
     // comment out if bullet vertical
      document.getElementById('myBullet' + x).style.top = document.getElementById('mySpan01').style.top
   
@@ -86,22 +61,21 @@ for (let x=1;  x <= document.myBulletMax; x++){
    }
 
 }   // check all bullets finished
-     
-     
-   if(myHitOther('myBullet'+x, 'mySpan02')){
+
+  if(myHitOther('mySpan01', 'mySpan02')){
     document.getElementById('mySpan02').style.left = '-400px'
     alert('You Lose!')
     location = 'T4A16-bullet-name.html'
-   }
+  }
 
 
-   if(myHitOther('myBullet'+x, 'mySpan03')){
+  if(myHitOther('mySpan01', 'mySpan03')){
     document.getElementById('mySpan03').style.left = '-400px'
     alert('You Win!')
     location = 'https://google.ca'
-   }
+  }
 
-   // your other checks go here
+  // your other checks go here
 
 }
 
@@ -109,10 +83,10 @@ for (let x=1;  x <= document.myBulletMax; x++){
 function myBulletFire(){
 
   for (let x=1;  x <= document.myBulletMax; x++){
-     document.getElementById('myBullet'+x).style.left = parseInt(document.getElementById('myBullet'+x).style.left) + document.myBulletMove
-     document.getElementById('myBullet'+x).style.top = parseInt(document.getElementById('myBullet'+x).style.tops) + document.myBulletMove
-
-  }
+      // Choose qwhich line to comment out. horizontal fire or veritcal fire
+      document.getElementById('myBullet'+x).style.left = parseInt(document.getElementById('myBullet'+x).style.left) + document.myBulletMove
+    // document.getElementById('myBullet'+x).style.top = parseInt(document.getElementById('myBullet'+x).style.top) - document.myBulletMove
+ }
 
   myCheckAll()
 }
@@ -120,950 +94,58 @@ function myBulletFire(){
 </script>
 
 
-<h1 align=center>T4A16-bullet-name.html</h1>
-<h4 align=left>Use WASD for control and L for shooting</h4>
 
-<input type=button value="Fire" style="display:none" id="myFire" onClick="{
+<h1 align=center>T4A16-bullet-veritcal.html</h1>
+
+
+<input type=button value="Fire" onClick="{
     document.myNumBullets += 1
     if (document.myNumBullets > document.myBulletMax){
        document.myNumBullets = 1
     }
+
     document.getElementById('myBullet' + document.myNumBullets).style.left = document.getElementById('mySpan01').style.left
     document.getElementById('myBullet' + document.myNumBullets).style.top = document.getElementById('mySpan01').style.top
     document.getElementById('myBullet' + document.myNumBullets).style.visibility= 'visible'
-   
+
     clearInterval(document.myBulletTimer)                    
     document.myBulletTimer = setInterval( myBulletFire , document.myBulletDelay);
+                        
 }">
 
-  
-<input type=button value="Right" style="display:none" id="myRight" onClick="{
+<input type=button value="right" onClick="{
   document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + document.myXmove
-  myCheckAll()
-                        
-}">
- <input type=button value="Left" style="display:none" id="myLeft" onClick="{ 
-  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - document.myXmove
-  myCheckAll()
-                        
-}">
-  <input type=button value="Up" style="display:none" id="myUp" onClick="{    
-  document.getElementById('mySpan01').style.top = parseInt(document.getElementById('mySpan01').style.top) - document.myYmove
-  myCheckAll()
-                        
-}"> 
-  <input type=button value="Down" style="display:none" id="myDown" onClick="{
-  document.getElementById('mySpan01').style.top = parseInt(document.getElementById('mySpan01').style.top) + document.myYmove
-  myCheckAll()
-                        
+  myCheckAll()                      
 }">
 
-<div id="myDiv01">...</div>
+
+
+<input type=button value="down" onClick="{
+  document.getElementById('mySpan01').style.top = parseInt(document.getElementById('mySpan01').style.top) + document.myYmove
+  myCheckAll()                      
+}">
+
 
 <span title="1" id="mySpan01" style="position:absolute; left:100; top:150; width:45; height:30">
    Span 1 </span><br>
 <span title="2"  id="mySpan02" style="position:absolute; left:300; top:150; width:45; height:30"> 
    Span 2 </span><br>
-<span title="3"  id="mySpan03" style="position:absolute; left:500; top:250; width:45; height:30"> 
+<span title="3"  id="mySpan03" style="position:absolute; left:700; top:250; width:45; height:30"> 
    Span 3 </span><br>
 
 
+
 <span title="b1" id="myBullet1" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
+<font color=red>x</font></span><br>
 
 <span title="b2" id="myBullet2" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
+<font color=green>x</font></span><br>
 
 <span title="b3" id="myBullet3" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
+<font color=yellow>x</font></span><br>
 
 <span title="b4" id="myBullet4" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
+<font color=blue>x</font></span><br>
 
 <span title="b5" id="myBullet5" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b6" id="myBullet6" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b7" id="myBullet7" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b8" id="myBullet8" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b9" id="myBullet9" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b10" id="myBullet10" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b11" id="myBullet11" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b12" id="myBullet12" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b13" id="myBullet13" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b14" id="myBullet14" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b15" id="myBullet15" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b16" id="myBullet16" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b17" id="myBullet17" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b18" id="myBullet18" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b19" id="myBullet19" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b20" id="myBullet20" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b21" id="myBullet21" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b22" id="myBullet22" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b23" id="myBullet23" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b24" id="myBullet24" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b25" id="myBullet25" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b26" id="myBullet26" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b27" id="myBullet27" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b28" id="myBullet28" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b29" id="myBullet29" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b30" id="myBullet30" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b31" id="myBullet31" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b32" id="myBullet32" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b33" id="myBullet33" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b34" id="myBullet34" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b35" id="myBullet35" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b36" id="myBullet36" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b37" id="myBullet37" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b38" id="myBullet38" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b39" id="myBullet39" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b40" id="myBullet40" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b41" id="myBullet41" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b42" id="myBullet42" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b43" id="myBullet43" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b44" id="myBullet44" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b45" id="myBullet45" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b46" id="myBullet46" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b47" id="myBullet47" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b48" id="myBullet48" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b49" id="myBullet49" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b50" id="myBullet50" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b51" id="myBullet51" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b52" id="myBullet52" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b53" id="myBullet53" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b54" id="myBullet54" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b55" id="myBullet55" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b56" id="myBullet56" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b57" id="myBullet57" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b58" id="myBullet58" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b59" id="myBullet59" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b60" id="myBullet60" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b61" id="myBullet61" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b62" id="myBullet62" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b63" id="myBullet63" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b64" id="myBullet64" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b65" id="myBullet65" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b66" id="myBullet66" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b67" id="myBullet67" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b68" id="myBullet68" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b69" id="myBullet69" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b70" id="myBullet70" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b71" id="myBullet71" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b72" id="myBullet72" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b73" id="myBullet73" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b74" id="myBullet74" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b75" id="myBullet75" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b76" id="myBullet76" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b77" id="myBullet77" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b78" id="myBullet78" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b79" id="myBullet79" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b80" id="myBullet80" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b81" id="myBullet81" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b82" id="myBullet82" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b83" id="myBullet83" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b84" id="myBullet84" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b85" id="myBullet85" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b86" id="myBullet86" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b87" id="myBullet87" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b88" id="myBullet88" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b89" id="myBullet89" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b90" id="myBullet90" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b91" id="myBullet91" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b92" id="myBullet92" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b93" id="myBullet93" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b94" id="myBullet94" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b95" id="myBullet95" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b96" id="myBullet96" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b97" id="myBullet97" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b98" id="myBullet98" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b99" id="myBullet99" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b100" id="myBullet100" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b101" id="myBullet101" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b102" id="myBullet102" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b103" id="myBullet103" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b104" id="myBullet104" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b105" id="myBullet105" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b106" id="myBullet106" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b107" id="myBullet107" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b108" id="myBullet108" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b109" id="myBullet109" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b110" id="myBullet110" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b111" id="myBullet111" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b112" id="myBullet112" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b113" id="myBullet113" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b114" id="myBullet114" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b115" id="myBullet115" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b116" id="myBullet116" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b117" id="myBullet117" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b118" id="myBullet118" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b119" id="myBullet119" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b120" id="myBullet120" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b121" id="myBullet121" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b122" id="myBullet122" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b123" id="myBullet123" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b124" id="myBullet124" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b125" id="myBullet125" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b126" id="myBullet126" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b127" id="myBullet127" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b128" id="myBullet128" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b129" id="myBullet129" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b130" id="myBullet130" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b131" id="myBullet131" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b132" id="myBullet132" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b133" id="myBullet133" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b134" id="myBullet134" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b135" id="myBullet135" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b136" id="myBullet136" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b137" id="myBullet137" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b138" id="myBullet138" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b139" id="myBullet139" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b140" id="myBullet140" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b141" id="myBullet141" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b142" id="myBullet142" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b143" id="myBullet143" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b144" id="myBullet144" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b145" id="myBullet145" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b146" id="myBullet146" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b147" id="myBullet147" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b148" id="myBullet148" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b149" id="myBullet149" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b150" id="myBullet150" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b151" id="myBullet151" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b152" id="myBullet152" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b153" id="myBullet153" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b154" id="myBullet154" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b155" id="myBullet155" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b156" id="myBullet156" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b157" id="myBullet157" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b158" id="myBullet158" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b159" id="myBullet159" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b160" id="myBullet160" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b161" id="myBullet161" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b162" id="myBullet162" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b163" id="myBullet163" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b164" id="myBullet164" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b165" id="myBullet165" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b166" id="myBullet166" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b167" id="myBullet167" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b168" id="myBullet168" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b169" id="myBullet169" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b170" id="myBullet170" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b171" id="myBullet171" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b172" id="myBullet172" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b173" id="myBullet173" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b174" id="myBullet174" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b175" id="myBullet175" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b176" id="myBullet176" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b177" id="myBullet177" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b178" id="myBullet178" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b179" id="myBullet179" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b180" id="myBullet180" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b181" id="myBullet181" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b182" id="myBullet182" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b183" id="myBullet183" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b184" id="myBullet184" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b185" id="myBullet185" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b186" id="myBullet186" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b187" id="myBullet187" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b188" id="myBullet188" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b189" id="myBullet189" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b190" id="myBullet190" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b191" id="myBullet191" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b192" id="myBullet192" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b193" id="myBullet193" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b194" id="myBullet194" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b195" id="myBullet195" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b196" id="myBullet196" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b197" id="myBullet197" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b198" id="myBullet198" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b199" id="myBullet199" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b200" id="myBullet200" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b201" id="myBullet201" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b202" id="myBullet202" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b203" id="myBullet203" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b204" id="myBullet204" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b205" id="myBullet205" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b206" id="myBullet206" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b207" id="myBullet207" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b208" id="myBullet208" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b209" id="myBullet209" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b210" id="myBullet210" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b211" id="myBullet211" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b212" id="myBullet212" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b213" id="myBullet213" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b214" id="myBullet214" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b215" id="myBullet215" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b216" id="myBullet216" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b217" id="myBullet217" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b218" id="myBullet218" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b219" id="myBullet219" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b220" id="myBullet220" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b221" id="myBullet221" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b222" id="myBullet222" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b223" id="myBullet223" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b224" id="myBullet224" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b225" id="myBullet225" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b226" id="myBullet226" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b227" id="myBullet227" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b228" id="myBullet228" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b229" id="myBullet229" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b230" id="myBullet230" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b231" id="myBullet231" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b232" id="myBullet232" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b233" id="myBullet233" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b234" id="myBullet234" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b235" id="myBullet235" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b236" id="myBullet236" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b237" id="myBullet237" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b238" id="myBullet238" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b239" id="myBullet239" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b240" id="myBullet240" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b241" id="myBullet241" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b242" id="myBullet242" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b243" id="myBullet243" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b244" id="myBullet244" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b245" id="myBullet245" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b246" id="myBullet246" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b247" id="myBullet247" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b248" id="myBullet248" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b249" id="myBullet249" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b250" id="myBullet250" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b251" id="myBullet251" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b252" id="myBullet252" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b253" id="myBullet253" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b254" id="myBullet254" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b255" id="myBullet255" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b256" id="myBullet256" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b257" id="myBullet257" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b258" id="myBullet258" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b259" id="myBullet259" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b260" id="myBullet260" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b261" id="myBullet261" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b262" id="myBullet262" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b263" id="myBullet263" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b264" id="myBullet264" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b265" id="myBullet265" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b266" id="myBullet266" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b267" id="myBullet267" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b268" id="myBullet268" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b269" id="myBullet269" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b270" id="myBullet270" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b271" id="myBullet271" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b272" id="myBullet272" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b273" id="myBullet273" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b274" id="myBullet274" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b275" id="myBullet275" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b276" id="myBullet276" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b277" id="myBullet277" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b278" id="myBullet278" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b279" id="myBullet279" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b280" id="myBullet280" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b281" id="myBullet281" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b282" id="myBullet282" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b283" id="myBullet283" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b284" id="myBullet284" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b285" id="myBullet285" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b286" id="myBullet286" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b287" id="myBullet287" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b288" id="myBullet288" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b289" id="myBullet289" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b290" id="myBullet290" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b291" id="myBullet291" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b292" id="myBullet292" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b293" id="myBullet293" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b294" id="myBullet294" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b295" id="myBullet295" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b296" id="myBullet296" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b297" id="myBullet297" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b298" id="myBullet298" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b299" id="myBullet299" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
-
-<span title="b300" id="myBullet300" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>•</font></span><br>
+<font color=lime>x</font></span><br>
